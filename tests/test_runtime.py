@@ -102,15 +102,15 @@ def test_notebook_is_valid_self_contained_and_compilable(language):
     assert all(c.metadata.get("cellView") == "form" for c in nb.cells if c.cell_type == "code")
     text = "\n".join(c.source for c in nb.cells)
     assert nb.cells[0].source.startswith("# ComfyUI instance on Colab\n")
-    assert bool(build_notebook.JAPANESE.search(text)) == (language == "JP")
+    assert bool(build_notebook.JAPANESE.search(text)) == (language in ("JP", "CN"))
     prose = "\n".join(c.source for c in nb.cells if c.cell_type == "markdown")
     assert "C:\\" not in prose and "D:\\" not in prose and "docs/" not in prose
 
 
-def test_both_notebooks_have_the_same_cells_and_code():
+def test_all_notebooks_have_the_same_cells_and_code():
     import build_notebook
-    japanese, english = (build_notebook.build(language)["cells"] for language in ("JP", "EN"))
-    assert [c["cell_type"] for c in japanese] == [c["cell_type"] for c in english]
+    japanese, english, chinese = (build_notebook.build(language)["cells"] for language in ("JP", "EN", "CN"))
+    assert [c["cell_type"] for c in japanese] == [c["cell_type"] for c in english] == [c["cell_type"] for c in chinese]
 
     def statements(cell):
         # What runs, without the text shown to the reader.
@@ -120,10 +120,11 @@ def test_both_notebooks_have_the_same_cells_and_code():
             if isinstance(node, ast.Constant) and isinstance(node.value, str):
                 node.value = ""
         return ast.dump(tree)
-    for left, right in zip(japanese, english):
-        if left["cell_type"] == "code" and "write_text(" not in left["source"]:
-            assert statements(left) == statements(right)
-            assert left["source"].count("#@param") == right["source"].count("#@param")
+    for notebook in (english, chinese):
+        for left, right in zip(japanese, notebook):
+            if left["cell_type"] == "code" and "write_text(" not in left["source"]:
+                assert statements(left) == statements(right)
+                assert left["source"].count("#@param") == right["source"].count("#@param")
 
 
 def test_notebook_texts_come_from_the_translation_file(monkeypatch, tmp_path):
@@ -133,8 +134,8 @@ def test_notebook_texts_come_from_the_translation_file(monkeypatch, tmp_path):
     for section, entry in texts.items():
         # A markdown cell is its lines per language; a code cell is one entry per text.
         for name, text in ([(section, entry)] if "JP" in entry else entry.items()):
-            assert set(text) == {"JP", "EN"}, name
-            assert type(text["JP"]) is type(text["EN"]) and len(text["JP"]) > 0 and len(text["EN"]) > 0, name
+            assert set(text) == {"JP", "EN", "CN"}, name
+            assert len({type(text[lang]) for lang in ("JP", "EN", "CN")}) == 1 and all(len(text[lang]) > 0 for lang in ("JP", "EN", "CN")), name
             english = text["EN"] if isinstance(text["EN"], str) else "\n".join(text["EN"])
             assert not build_notebook.JAPANESE.search(english), name
             lines += 1
@@ -144,7 +145,7 @@ def test_notebook_texts_come_from_the_translation_file(monkeypatch, tmp_path):
     builder = (ROOT / "build_notebook.py").read_text(encoding="utf-8")
     assert [line.split(" = ")[0] for line in builder.splitlines() if build_notebook.JAPANESE.search(line)] == ["JAPANESE"]
     # Every text reaches the notebook, and a text no cell refers to is refused.
-    for language in ("JP", "EN"):
+    for language in ("JP", "EN", "CN"):
         notebook = "\n".join(cell["source"] for cell in build_notebook.build(language)["cells"])
         for section, entry in texts.items():
             for text in ([entry] if "JP" in entry else entry.values()):
@@ -153,7 +154,7 @@ def test_notebook_texts_come_from_the_translation_file(monkeypatch, tmp_path):
     changed = build_notebook.translations()
     changed["notebook"]["stop"]["title"]["EN"] = "10. Finish"
     changed["notebook"]["stop"]["skipped"]["EN"] = 'Check "STOP_NOW" to finish.'
-    changed["notebook"]["save"]["leftover"] = {"JP": "未使用", "EN": "Unused"}
+    changed["notebook"]["save"]["leftover"] = {"JP": "未使用", "EN": "Unused", "CN": "未使用"}
     copy = tmp_path / "translations.json"
     copy.write_text(json.dumps(changed, ensure_ascii=False), encoding="utf-8")
     monkeypatch.setattr(build_notebook, "TRANSLATIONS", copy)
@@ -189,7 +190,7 @@ def test_runtime_messages_come_from_the_translation_file():
     # An embedded runtime is the package with the messages of its language on that one line of messages.py.
     source = sources["messages.py"]
     placeholder = build_notebook.MESSAGES_LINE.search(source).group(0)
-    for language in ("JP", "EN"):
+    for language in ("JP", "EN", "CN"):
         files = build_notebook.runtime_files(language)
         assert {name: text for name, text in files.items() if name != "messages.py"} == {
             name: text for name, text in sources.items() if name != "messages.py"}
@@ -212,7 +213,7 @@ def test_runtime_messages_come_from_the_translation_file():
     # A message the code refers to is missing, in one language or both; a message nothing refers to.
     refused(lambda s: s["stop"].pop("done"), "stop.done", KeyError)
     refused(lambda s: s["stop"]["done"].pop("EN"), "EN", KeyError)
-    refused(lambda s: s["stop"].update(leftover={"JP": "未使用", "EN": "Unused"}), "does not use: stop.leftover")
+    refused(lambda s: s["stop"].update(leftover={"JP": "未使用", "EN": "Unused", "CN": "未使用"}), "does not use: stop.leftover")
     refused(lambda s: s["stop"]["done"].update(EN="停止しました。"), "stop.done has Japanese in its English text")
     # Text written into the code, or a key the build cannot see, in any module of the package.
     with pytest.raises(ValueError, match="runtime/service.py holds Japanese text"):
@@ -2508,7 +2509,7 @@ def test_notebook_cells_for_setup_download_and_status_are_as_a_user_needs_them()
     assert 'RUNTIME_ONLY = False #@param {type:"boolean"}' in download and "runtime_only=RUNTIME_ONLY" in download
     assert "RUN_ISOLATION_CHECK" not in status and "isolation_report" not in status
     # Nothing in the notebook's own text refers to how it used to work.
-    for language in ("JP", "EN"):
+    for language in ("JP", "EN", "CN"):
         text = "\n".join(cell["source"] for cell in build_notebook.build(language)["cells"] if "write_text(" not in cell["source"])
         for phrase in ("従来", "これまで", "as before", "used to"):
             assert phrase not in text, phrase
