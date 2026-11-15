@@ -77,7 +77,7 @@ def embedded_runtime(nb):
     return ast.literal_eval(files.value)
 
 
-@pytest.mark.parametrize("language", ["JP", "EN"])
+@pytest.mark.parametrize("language", ["JP", "EN", "CN"])
 def test_notebook_is_valid_self_contained_and_compilable(language):
     import build_notebook
     path = ROOT / f"ComfyUI_instance_on_Colab_{language}.ipynb"
@@ -101,7 +101,7 @@ def test_notebook_is_valid_self_contained_and_compilable(language):
         assert switch + ' = False #@param {type:"boolean"}' in source
     assert all(c.metadata.get("cellView") == "form" for c in nb.cells if c.cell_type == "code")
     text = "\n".join(c.source for c in nb.cells)
-    assert nb.cells[0].source.startswith("# ComfyUI instance on Colab\n")
+    assert nb.cells[0].source.startswith("# 在 Google Colab 中运行 ComfyUI\n" if language == "CN" else "# ComfyUI instance on Colab\n")
     assert bool(build_notebook.JAPANESE.search(text)) == (language in ("JP", "CN"))
     prose = "\n".join(c.source for c in nb.cells if c.cell_type == "markdown")
     assert "C:\\" not in prose and "D:\\" not in prose and "docs/" not in prose
@@ -1066,7 +1066,7 @@ def test_cell_6_4_shows_how_long_comfyui_has_run_and_when_it_last_saved(tmp_path
     assert runtime.service.keep_running_status(running) == t("keep.status", running="1:02", saved=t("keep.saved_failed"))
 
 
-@pytest.mark.parametrize("language", ["JP", "EN"])
+@pytest.mark.parametrize("language", ["JP", "EN", "CN"])
 def test_notebook_offers_cell_6_4_right_after_the_ways_to_start(language):
     import build_notebook
     titles = [cell["source"].splitlines()[0] for cell in build_notebook.build(language)["cells"] if cell["cell_type"] == "code"]
