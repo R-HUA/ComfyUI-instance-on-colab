@@ -1,4 +1,4 @@
-"""Build the Japanese and English Colab notebooks from the runtime package and translations.json.
+"""Build the Japanese, English and Simplified Chinese Colab notebooks from the runtime package and translations.json.
 
 translations.json holds every text a reader sees, in both languages:
   "notebook"  the text of each cell. A code cell is section -> key -> {"JP": ..., "EN": ...}
@@ -20,7 +20,7 @@ import textwrap
 HERE = Path(__file__).resolve().parent
 NAME = "ComfyUI_instance_on_Colab"
 TRANSLATIONS = HERE / "translations.json"
-LANGUAGES = ("JP", "EN")
+LANGUAGES = ("JP", "EN", "CN")
 JAPANESE = re.compile(r"[　-ヿ一-鿿＀-￯]")
 MESSAGES_LINE = re.compile(r"(?m)^MESSAGES = None\b.*$")
 RUNTIME = HERE / "runtime"
@@ -55,7 +55,7 @@ def runtime_sources():
 def check_runtime(sources, sections):
     """Refuse a runtime and messages that do not fit each other. sources: {file name: source}."""
     tables = {language: runtime_messages(language, sections) for language in LANGUAGES}
-    japanese, english = (tables[language] for language in LANGUAGES)
+    japanese, english = tables["JP"], tables["EN"]
     used = set()
     for file, source in sources.items():
         where = f"runtime/{file}"
@@ -80,8 +80,9 @@ def check_runtime(sources, sections):
             raise ValueError(f"{TRANSLATIONS.name} has a runtime message the runtime package does not use: {key}")
         # A sentence may order its values differently in another language, but it must
         # show the same values, formatted the same way.
-        if shown_values(japanese[key]) != shown_values(english[key]):
-            raise ValueError(f"runtime message {key} shows different values in the two languages")
+        for language in LANGUAGES:
+            if shown_values(japanese[key]) != shown_values(tables[language][key]):
+                raise ValueError(f"runtime message {key} shows different values in {language}")
         if JAPANESE.search(english[key]):
             raise ValueError(f"runtime message {key} has Japanese in its English text")
 
@@ -99,7 +100,7 @@ def runtime_files(language):
 
 
 def build(language):
-    """The notebook as a dict. language is "JP" or "EN"."""
+    """The notebook as a dict. language is "JP", "EN" or "CN"."""
     texts = translations()["notebook"]
     cells = []
     used = set()
