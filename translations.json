@@ -18,94 +18,123 @@
         "**How to use:** Choose a GPU in the runtime type, then run cells **1 → 2 → 3 → one of 6-1 to 6-3** in order. Set the fields and checkboxes of a cell before you run it. An action with a checkbox only happens when you run the cell with the box checked.",
         "",
         "**Before you start:** Connecting Drive grants access to your whole Drive. Use a dedicated Google account that holds no personal data, and install only custom nodes and models you trust (see \"Security\" at the end). Follow the [Colab terms](https://research.google.com/colaboratory/faq.html); a paid plan is assumed."
+      ],
+      "CN": [
+        "# 在 Google Colab 中运行 ComfyUI",
+        "",
+        "使用 Colab GPU 启动 ComfyUI，并通过 [Comfy Desktop](https://github.com/Comfy-Org/Comfy-Desktop) 的 **Remote Connection（远程连接）** 或普通浏览器访问。模型和运行环境保存在 Google Drive 的 `ComfyUI-Colab/` 目录中。",
+        "",
+        "**使用步骤：** 在 Colab 的「更改运行时类型」中选择 GPU，再依次运行 **1 → 2 → 3 → 6-1、6-2 或 6-3**。运行单元格之前先填写参数、设置复选框；只有勾选相应复选框并运行单元格时，相关操作才会执行。",
+        "",
+        "**开始前：** 授权挂载 Google Drive 会开放整个云盘的访问权限。建议使用不含个人数据的专用 Google 账号，只安装可信的模型和自定义节点（见末尾「安全说明」）。请遵守 [Colab 使用条款](https://research.google.com/colaboratory/faq.html)；本项目按付费 Colab 方案使用场景设计。"
       ]
     },
     "check": {
       "title": {
         "JP": "0. 更新確認",
-        "EN": "0. Check for updates"
+        "EN": "0. Check for updates",
+        "CN": "0. 检查更新"
       },
       "use_latest": {
         "JP": "ComfyUIの最新リリースを確認します。ONにすると、1の `COMFY_REF` の代わりに最新版を使います。",
-        "EN": "Checks the latest release of ComfyUI. Turn this on to use it instead of `COMFY_REF` in cell 1. "
+        "EN": "Checks the latest release of ComfyUI. Turn this on to use it instead of `COMFY_REF` in cell 1. ",
+        "CN": "检查最新的 ComfyUI 正式版本。勾选后将使用最新版本覆盖第 1 步的 `COMFY_REF`。"
       },
       "failed": {
         "JP": "最新リリースを取得できませんでした。しばらくしてから実行し直してください。",
-        "EN": "Could not get the latest release. Try again in a while."
+        "EN": "Could not get the latest release. Try again in a while.",
+        "CN": "无法获取最新版本，请稍后重试。"
       },
       "latest": {
         "JP": "ComfyUIの最新リリース:",
-        "EN": "Latest ComfyUI release:"
+        "EN": "Latest ComfyUI release:",
+        "CN": "ComfyUI 最新版本："
       },
       "using": {
         "JP": "COMFY_REFを最新リリースにしました。続けて1を実行してください。",
-        "EN": "COMFY_REF is set to the latest release. Run cell 1 next."
+        "EN": "COMFY_REF is set to the latest release. Run cell 1 next.",
+        "CN": "已选择最新版本作为 COMFY_REF。请继续运行第 1 步。"
       },
       "not_using": {
         "JP": "COMFY_REFは1の入力値を使います。最新リリースを使う場合は、USE_LATEST_COMFYUIをONにして実行してください。",
-        "EN": "COMFY_REF keeps the value entered in cell 1. To use the latest release, check USE_LATEST_COMFYUI and run the cell."
+        "EN": "COMFY_REF keeps the value entered in cell 1. To use the latest release, check USE_LATEST_COMFYUI and run the cell.",
+        "CN": "COMFY_REF 将使用第 1 步填写的版本。如需最新版本，请勾选 USE_LATEST_COMFYUI 后重新运行。"
       }
     },
     "settings": {
       "title": {
         "JP": "1. 設定",
-        "EN": "1. Settings"
+        "EN": "1. Settings",
+        "CN": "1. 基础设置"
       },
       "drive_folder": {
         "JP": "Googleドライブの保存先フォルダー（マイドライブからの相対パス）。同じフォルダーを複数のランタイムで同時に使わないでください。",
-        "EN": "Folder on Google Drive (relative to My Drive). Do not use the same folder from several runtimes at once."
+        "EN": "Folder on Google Drive (relative to My Drive). Do not use the same folder from several runtimes at once.",
+        "CN": "Google Drive 保存目录（相对于「我的云端硬盘」）。请勿让多个运行时同时使用同一个目录。"
       },
       "comfy_ref": {
         "JP": "ComfyUIのバージョン（リリースタグ）。新しい環境を作るときと、11で更新するときに使われます。",
-        "EN": "ComfyUI version (release tag). Used when a new environment is created and when you update with cell 11."
+        "EN": "ComfyUI version (release tag). Used when a new environment is created and when you update with cell 11.",
+        "CN": "ComfyUI 版本标签；创建新环境或在第 11 步更新时使用。"
       },
       "checkpoint_seconds": {
         "JP": "環境を自動保存する間隔（秒、60以上）。",
-        "EN": "Interval between automatic saves of the environment (seconds, 60 or more)."
+        "EN": "Interval between automatic saves of the environment (seconds, 60 or more).",
+        "CN": "自动保存环境的间隔（秒，最小 60 秒）。"
       },
       "restore": {
         "JP": "Googleドライブに保存した環境を復元する。OFFにすると新しい環境で始めます。",
-        "EN": "Restore the environment saved on Google Drive. Turn off to start with a fresh one."
+        "EN": "Restore the environment saved on Google Drive. Turn off to start with a fresh one.",
+        "CN": "恢复 Google Drive 中已保存的环境；关闭后使用全新环境。"
       },
       "apt_packages": {
         "JP": "追加で必要なOSパッケージ（空白区切り、任意）。",
-        "EN": "Extra OS packages you need (space separated, optional)."
+        "EN": "Extra OS packages you need (space separated, optional).",
+        "CN": "额外安装的系统软件包（可选，多个名称用空格分隔）。"
       },
       "model_access": {
         "JP": "Googleドライブのモデルの使い方。`direct`: コピーせずに直接読み込みます。各モデルは最初に使うときに読み込まれ、初回は時間がかかります。`copy`: セットアップ時にすべてColabへコピーします。モデル全体の空き容量が必要です。",
-        "EN": "How the models on Google Drive are used. `direct`: read in place without copying (each model is fetched the first time it is used, so its first load takes longer). `copy`: all of them are copied to Colab during setup (needs free space for all models)."
+        "EN": "How the models on Google Drive are used. `direct`: read in place without copying (each model is fetched the first time it is used, so its first load takes longer). `copy`: all of them are copied to Colab during setup (needs free space for all models).",
+        "CN": "模型访问方式：`direct` 按需直接从 Drive 读取（首次加载较慢）；`copy` 在初始化时复制所有模型到 Colab 本地磁盘（需要足够空间）。"
       },
       "sage_attention": {
         "JP": "SageAttentionを使います。（attentionの計算が速くなります。効果が出やすいのは動画モデルです）。セットアップ時にこのGPUで試し、使えない場合は標準のattentionで起動します。生成結果に不具合が出た場合はOFFにして、新しいランタイムで実行し直してください。",
-        "EN": "Use SageAttention (faster attention; the gain shows mostly with video models). Setup tries it on this GPU and starts ComfyUI with the standard attention if it cannot be used. If your results come out wrong, turn it off and run again on a new runtime."
+        "EN": "Use SageAttention (faster attention; the gain shows mostly with video models). Setup tries it on this GPU and starts ComfyUI with the standard attention if it cannot be used. If your results come out wrong, turn it off and run again on a new runtime.",
+        "CN": "启用 SageAttention 加速注意力计算（主要在视频模型中收益明显）。若当前 GPU 无法使用，将回退到标准注意力；生成异常时请关闭并在新运行时重试。"
       },
       "fp16_accumulation": {
         "JP": "`--fast fp16_accumulation` を使う（fp16の行列演算が速くなり、モデルをfp16で動かすことを優先します）。ComfyUIが品質の下がる可能性のある実験的な機能としているため、既定はOFFです。生成結果に不具合が出た場合はOFFにして、新しいランタイムで実行し直してください。",
-        "EN": "Use `--fast fp16_accumulation` (faster fp16 matrix multiplication, and models are run in fp16 where they can be). Off by default because ComfyUI calls it an experimental feature that may lower quality. If your results come out wrong, turn it off and run again on a new runtime."
+        "EN": "Use `--fast fp16_accumulation` (faster fp16 matrix multiplication, and models are run in fp16 where they can be). Off by default because ComfyUI calls it an experimental feature that may lower quality. If your results come out wrong, turn it off and run again on a new runtime.",
+        "CN": "启用 `--fast fp16_accumulation`，加快部分 fp16 运算。此功能仍是实验性质，可能影响画质；默认关闭，结果异常时请关闭并在新运行时重试。"
       }
     },
     "unpack": {
       "title": {
         "JP": "2. 実行コードを展開",
-        "EN": "2. Unpack the runtime code"
+        "EN": "2. Unpack the runtime code",
+        "CN": "2. 解包运行环境代码"
       },
       "done": {
         "JP": "実行コードの展開が完了しました。",
-        "EN": "The runtime code is unpacked."
+        "EN": "The runtime code is unpacked.",
+        "CN": "运行环境代码已解包。"
       }
     },
     "setup": {
       "title": {
         "JP": "3. Googleドライブを接続してセットアップ / 環境を復元",
-        "EN": "3. Connect Google Drive and set up / restore the environment"
+        "EN": "3. Connect Google Drive and set up / restore the environment",
+        "CN": "3. 连接 Google Drive 并安装 / 恢复环境"
       },
       "note": {
         "JP": "表示されるGoogleの画面でGoogleドライブへの接続を許可します。完了まで数分かかります。",
-        "EN": "Allow access to Google Drive in the Google dialog that appears. This takes a few minutes."
+        "EN": "Allow access to Google Drive in the Google dialog that appears. This takes a few minutes.",
+        "CN": "在弹出的 Google 授权界面允许访问 Google Drive。初始化可能需要几分钟。"
       },
       "models_location": {
         "JP": "モデルの置き場所: マイドライブ/",
-        "EN": "Put models in: My Drive/"
+        "EN": "Put models in: My Drive/",
+        "CN": "模型请放在：我的云端硬盘/"
       }
     },
     "models": {
@@ -126,54 +155,74 @@
         "- **Upload by hand:** upload into the matching folder on Google Drive, then run cell 5.",
         "- **Download from a URL:** paste the URL into cell 4 and run it. The model is saved to Google Drive and can be used right away. With `RUNTIME_ONLY` checked it is not saved to Google Drive and is used on this runtime only.",
         "- Models on Google Drive are fetched when they are used, so the first load of each one takes longer. To copy them all to Colab during setup instead, set `MODEL_ACCESS` to `copy` in cell 1."
+      ],
+      "CN": [
+        "## 模型管理",
+        "",
+        "Google Drive 中的 `ComfyUI-Colab/models/` 按模型类型分为 `checkpoints`、`diffusion_models`、`text_encoders`、`vae`、`loras`、`controlnet` 等目录。",
+        "",
+        "- **手动上传：** 将模型上传到 Drive 中相应目录，然后执行第 5 步同步。",
+        "- **通过链接下载：** 在第 4 步填写 Hugging Face 或 Civitai 的模型链接并执行。默认下载到 Drive，之后可重复使用；启用 `RUNTIME_ONLY` 时只保存到本次 Colab 运行时，运行时删除后模型也会消失。",
+        "- **加载方式：** `MODEL_ACCESS=direct` 按需从 Drive 读取，首次加载模型较慢；`MODEL_ACCESS=copy` 在初始化时将全部模型复制到 Colab 本地磁盘，需要预留足够空间。"
       ]
     },
     "download": {
       "title": {
         "JP": "4. URLからモデルを取得（Hugging Face / Civitai）",
-        "EN": "4. Download a model from a URL (Hugging Face / Civitai)"
+        "EN": "4. Download a model from a URL (Hugging Face / Civitai)",
+        "CN": "4. 通过链接下载模型（Hugging Face / Civitai）"
       },
       "url": {
         "JP": "Hugging FaceはFiles and versionsで開いたURL、Civitaiはバージョンを選んだページかダウンロードリンクのURLを貼り付けます。",
-        "EN": "Paste the URL of the file page on Hugging Face opened under Files and versions, or on Civitai the page with a version selected or the download link."
+        "EN": "Paste the URL of the file page on Hugging Face opened under Files and versions, or on Civitai the page with a version selected or the download link.",
+        "CN": "粘贴 Hugging Face 的 Files and versions 文件页面链接，或 Civitai 已选择模型版本的页面 / 下载链接。"
       },
       "folder": {
         "JP": "保存先のフォルダー（一覧にない場合は入力できます）。",
-        "EN": "Destination folder (you can type one that is not in the list)."
+        "EN": "Destination folder (you can type one that is not in the list).",
+        "CN": "模型保存目录（也可手动输入列表中没有的目录名称）。"
       },
       "filename": {
         "JP": "保存名（空欄なら配布元のファイル名）。",
-        "EN": "File name (leave empty to keep the name from the site)."
+        "EN": "File name (leave empty to keep the name from the site).",
+        "CN": "保存文件名（留空则沿用网站提供的名称）。"
       },
       "sha256": {
         "JP": "配布元が示すSHA256（任意。指定すると照合します）。",
-        "EN": "SHA256 published by the site (optional; verified when given)."
+        "EN": "SHA256 published by the site (optional; verified when given).",
+        "CN": "网站公布的 SHA256 校验值（可选；填写后将校验文件）。"
       },
       "token": {
         "JP": "認証が必要なモデル: Colabのシークレット（鍵アイコン）に `HF_TOKEN` または `CIVITAI_TOKEN` を登録してONにします。",
-        "EN": "Models that need authentication: register `HF_TOKEN` or `CIVITAI_TOKEN` in Colab Secrets (the key icon) and turn this on."
+        "EN": "Models that need authentication: register `HF_TOKEN` or `CIVITAI_TOKEN` in Colab Secrets (the key icon) and turn this on.",
+        "CN": "需要登录才能下载时，在 Colab「密钥」（钥匙图标）中添加 `HF_TOKEN` 或 `CIVITAI_TOKEN`，再勾选此项。"
       },
       "skipped": {
         "JP": "取得する場合は、URLを入力しDOWNLOAD_NOWをONにして実行してください。",
-        "EN": "To download, enter a URL, check DOWNLOAD_NOW and run the cell."
+        "EN": "To download, enter a URL, check DOWNLOAD_NOW and run the cell.",
+        "CN": "如需下载模型，请输入 URL、勾选 DOWNLOAD_NOW，再运行此单元格。"
       },
       "runtime_only": {
         "JP": "Googleドライブへ保存せず、このランタイムだけで使う。ランタイムを削除すると消えます。",
-        "EN": "Use it on this runtime only, without saving it to Google Drive. It is gone when the runtime is deleted."
+        "EN": "Use it on this runtime only, without saving it to Google Drive. It is gone when the runtime is deleted.",
+        "CN": "只在本次运行时使用，不保存到 Google Drive；删除运行时后模型会消失。"
       }
     },
     "refresh": {
       "title": {
         "JP": "5. Googleドライブへ手動で置いたモデルを反映",
-        "EN": "5. Load models you uploaded to Google Drive"
+        "EN": "5. Load models you uploaded to Google Drive",
+        "CN": "5. 同步手动上传到 Google Drive 的模型"
       },
       "done": {
         "JP": "接続中の場合はComfyUIの画面を再読み込みしてください。同名のモデルを置き換えた場合は、10で停止（FLUSH_AND_UNMOUNTはOFF）してから6-1〜6-3のいずれかを実行します。",
-        "EN": "If you are connected, reload the ComfyUI page. If you replaced a model that has the same name, stop with cell 10 (FLUSH_AND_UNMOUNT off) and run one of cells 6-1 to 6-3 again."
+        "EN": "If you are connected, reload the ComfyUI page. If you replaced a model that has the same name, stop with cell 10 (FLUSH_AND_UNMOUNT off) and run one of cells 6-1 to 6-3 again.",
+        "CN": "如已连接 ComfyUI，请刷新页面。如果替换了同名模型，请先通过第 10 步停止（关闭 FLUSH_AND_UNMOUNT），再运行 6-1、6-2 或 6-3。"
       },
       "skipped": {
         "JP": "Googleドライブへ手動でモデルを追加したときに、REFRESH_MODELSをONにして実行してください。",
-        "EN": "After adding models to Google Drive by hand, check REFRESH_MODELS and run the cell."
+        "EN": "After adding models to Google Drive by hand, check REFRESH_MODELS and run the cell.",
+        "CN": "手动向 Google Drive 添加模型后，请勾选 REFRESH_MODELS 并运行。"
       }
     },
     "connecting": {
@@ -202,60 +251,84 @@
         "- Once ComfyUI has started, its cell keeps running and waits, because if you only work on ComfyUI's page Colab may disconnect the notebook as idle. To use another cell, stop it with ■, then resume waiting with **6-4** when you are done.",
         "- If the UI does not appear, the connection diagnosis in cell 7 shows where it stops.",
         "- The **Stop** button at the top of the ComfyUI page also saves the environment and disconnects. You can choose to delete the runtime as well."
+      ],
+      "CN": [
+        "## 启动与连接",
+        "",
+        "从以下三种方式中选择一种并运行对应单元格。切换连接方式前先通过第 10 步停止，并关闭 `FLUSH_AND_UNMOUNT`，以保留当前运行时的 Drive 挂载。首次打开界面可能需要约一分钟。",
+        "",
+        "- **6-1 私有 URL：** 适合在打开此 Notebook 的浏览器中使用，只有登录了运行此 Notebook 的 Google 账号的浏览器可以访问。不对外公开，Comfy Desktop 无法使用这种连接方式。",
+        "- **6-2 公共 URL：** 适合在其他设备或 Comfy Desktop 的 **Remote Connection（远程连接）** 中使用。打开显示的 URL 后输入 Notebook 中的配对码即可连接；每个配对码只能使用一次，有效期 10 分钟。执行第 10 步停止后 URL 失效。",
+        "- **6-3 自定义域名：** 使用自己的固定域名，通过 Cloudflare Access 登录，仅允许事先授权的账号访问。需要提前准备 Cloudflare 账号、域名并完成配置。",
+        "- 在 Comfy Desktop 的连接设置中启用 **Auto-download outputs（自动下载输出）**，可将生成文件保存到电脑。通过浏览器使用或遗漏的输出可在第 9 步打包下载。",
+        "- 启动单元格会持续运行，以降低只操作 ComfyUI 页面时被 Colab 判断为空闲的概率。需要运行其他单元格时先点 ■ 中断等待，完成后运行 **6-4** 恢复等待。",
+        "- 如果界面打不开，在第 7 步启用连接诊断。",
+        "- ComfyUI 页面顶部的 **Stop（停止）** 按钮也可以保存环境并断开连接，可选择同时删除运行时。"
       ]
     },
     "start_colab": {
       "title": {
         "JP": "6-1. 起動して接続: プライベートURL（このブラウザーのみ）",
-        "EN": "6-1. Start and connect: Private URL (this browser only)"
+        "EN": "6-1. Start and connect: Private URL (this browser only)",
+        "CN": "6-1. 启动并连接：私有 URL（仅当前浏览器）"
       }
     },
     "start_tunnel": {
       "title": {
         "JP": "6-2. 起動して接続: 公開URL",
-        "EN": "6-2. Start and connect: Public URL"
+        "EN": "6-2. Start and connect: Public URL",
+        "CN": "6-2. 启动并连接：公共 URL"
       },
       "new_code": {
         "JP": "6-2で起動した後、別の端末を追加するかまたはコードの期限が切れたときにONにして実行すると、新しいペアリングコードを発行します。",
-        "EN": "After starting with 6-2, check this and run the cell to issue a new pairing code, for another device or when the code has expired."
+        "EN": "After starting with 6-2, check this and run the cell to issue a new pairing code, for another device or when the code has expired.",
+        "CN": "6-2 启动后，如需添加其他设备或配对码已过期，请勾选此项再运行以生成新配对码。"
       }
     },
     "start_access": {
       "title": {
         "JP": "6-3. 起動して接続: 独自ドメインURL",
-        "EN": "6-3. Start and connect: Custom domain URL"
+        "EN": "6-3. Start and connect: Custom domain URL",
+        "CN": "6-3. 启动并连接：自定义域名"
       },
       "setup": {
         "JP": "事前にCloudflare Zero Trustで、名前付きトンネル（公開ホスト名の転送先は `http://127.0.0.1:8189`）と、そのホスト名を保護するAccessアプリケーションを作成します。Colabのシークレットに、トンネルのトークン（`eyJ` で始まる文字列）を `CF_TUNNEL_TOKEN`、AccessアプリケーションのApplication Audience (AUD) Tag（64桁）を `CF_ACCESS_AUD` の名前で登録し、このノートブックからのアクセスを許可してください。",
-        "EN": "Beforehand, in Cloudflare Zero Trust, create a named tunnel (public hostname pointing to `http://127.0.0.1:8189`) and an Access application that protects that hostname. In Colab Secrets, register the tunnel token (the string that starts with `eyJ`) as `CF_TUNNEL_TOKEN` and the Application Audience (AUD) Tag of the Access application (64 characters) as `CF_ACCESS_AUD`, and allow this notebook to read them."
+        "EN": "Beforehand, in Cloudflare Zero Trust, create a named tunnel (public hostname pointing to `http://127.0.0.1:8189`) and an Access application that protects that hostname. In Colab Secrets, register the tunnel token (the string that starts with `eyJ`) as `CF_TUNNEL_TOKEN` and the Application Audience (AUD) Tag of the Access application (64 characters) as `CF_ACCESS_AUD`, and allow this notebook to read them.",
+        "CN": "先在 Cloudflare Zero Trust 创建命名隧道（公开主机名指向 `http://127.0.0.1:8189`），并创建保护该主机名的 Access 应用。在 Colab「密钥」中分别将以 `eyJ` 开头的隧道令牌保存为 `CF_TUNNEL_TOKEN`、Access 应用的 64 字符 Application Audience (AUD) Tag 保存为 `CF_ACCESS_AUD`，并授权此 Notebook 读取。"
       },
       "hostname": {
         "JP": "トンネルの公開ホスト名（例: `comfy.example.com`）。",
-        "EN": "Public hostname of the tunnel (for example `comfy.example.com`)."
+        "EN": "Public hostname of the tunnel (for example `comfy.example.com`).",
+        "CN": "隧道的公开主机名，例如 `comfy.example.com`。"
       }
     },
     "keep_running": {
       "title": {
         "JP": "6-4. 待機を再開（切断の防止）",
-        "EN": "6-4. Resume waiting (prevents disconnection)"
+        "EN": "6-4. Resume waiting (prevents disconnection)",
+        "CN": "6-4. 恢复等待（降低空闲断开概率）"
       },
       "note": {
         "JP": "6-1〜6-3はComfyUIを起動した後もそのまま実行中になりComfyUIを使っている間は待機します。ComfyUIの画面での操作はColabからは見えないためノートブックで何もしないと無操作としてランタイムが切断されることがありますが、セルが実行中の間は無操作として扱われにくくなります。ほかのセルを使うときは、実行中のセルを停止（■）してから実行し、終わったらこのセルを実行して待機を再開してください。停止してもComfyUIは止まりません。Colabのタブは閉じないでください。",
-        "EN": "Cells 6-1 to 6-3 keep running after ComfyUI has started, and wait while you use it. Colab cannot see what you do on ComfyUI's page, so if nothing happens in the notebook it may disconnect the runtime as idle; while a cell is running, the notebook is less likely to be taken for idle. To use another cell, stop the running cell (■) first, then run this cell to resume waiting when you are done. Stopping it does not stop ComfyUI. Do not close the Colab tab."
+        "EN": "Cells 6-1 to 6-3 keep running after ComfyUI has started, and wait while you use it. Colab cannot see what you do on ComfyUI's page, so if nothing happens in the notebook it may disconnect the runtime as idle; while a cell is running, the notebook is less likely to be taken for idle. To use another cell, stop the running cell (■) first, then run this cell to resume waiting when you are done. Stopping it does not stop ComfyUI. Do not close the Colab tab.",
+        "CN": "6-1 至 6-3 启动 ComfyUI 后会保持单元格运行，以降低仅操作 ComfyUI 页面时被 Colab 判为空闲的概率。若要执行其他单元格，先点击 ■ 中断等待，完成操作后运行这里继续等待。中断等待不会停止 ComfyUI。请保持 Colab 标签页打开。"
       }
     },
     "status": {
       "title": {
         "JP": "7. 保存状況とログ / 診断",
-        "EN": "7. Save status and logs / diagnosis"
+        "EN": "7. Save status and logs / diagnosis",
+        "CN": "7. 查看保存状态、日志及连接诊断"
       },
       "diagnosis": {
         "JP": "画面が表示されないときにONにして実行すると、接続がどこで止まっているかを調べます。",
-        "EN": "When the UI does not appear, check this and run the cell to find where the connection stops."
+        "EN": "When the UI does not appear, check this and run the cell to find where the connection stops.",
+        "CN": "如果界面打不开，勾选并运行以检查连接卡在哪个环节。"
       },
       "no_status": {
         "JP": "保存状況はまだありません。",
-        "EN": "No save status yet."
+        "EN": "No save status yet.",
+        "CN": "目前还没有保存状态。"
       }
     },
     "saving": {
@@ -272,52 +345,69 @@
         "ComfyUI itself, custom nodes and settings is saved to Google Drive automatically and restored by cell 3 next time. Use cell 8 when you want to be sure the latest changes are saved. Generated files are not saved to Google Drive.",
         "",
         "When you finish, make sure your outputs are on your PC, run cell 10, and wait for its completion message before you delete the runtime."
+      ],
+      "CN": [
+        "## 保存与结束",
+        "",
+        "ComfyUI 程序、自定义节点和设置会自动保存到 Google Drive，并在下次执行第 3 步时恢复。想立即保存最新更改可运行第 8 步。**生成的图片和其他输出文件不会自动保存到 Google Drive。**",
+        "",
+        "结束使用前，请先把生成结果保存到本地电脑，再执行第 10 步，确认停止和保存操作完成后再删除 Colab 运行时。"
       ]
     },
     "save": {
       "title": {
         "JP": "8. 環境を今すぐGoogleドライブへ保存",
-        "EN": "8. Save the environment to Google Drive now"
+        "EN": "8. Save the environment to Google Drive now",
+        "CN": "8. 立即将运行环境保存到 Google Drive"
       },
       "done": {
         "JP": "環境と新しいモデルをGoogleドライブへ保存しました。",
-        "EN": "Saved the environment and new models to Google Drive."
+        "EN": "Saved the environment and new models to Google Drive.",
+        "CN": "已将环境和新模型保存到 Google Drive。"
       },
       "skipped": {
         "JP": "保存する場合は、SAVE_NOWをONにして実行してください。",
-        "EN": "To save, check SAVE_NOW and run the cell."
+        "EN": "To save, check SAVE_NOW and run the cell.",
+        "CN": "需要保存时勾选 SAVE_NOW 并运行。"
       }
     },
     "zip": {
       "title": {
         "JP": "9. 生成物をZIPでPCへダウンロード",
-        "EN": "9. Download generated files to your PC as a ZIP"
+        "EN": "9. Download generated files to your PC as a ZIP",
+        "CN": "9. 将生成文件打包为 ZIP 下载到电脑"
       },
       "skipped": {
         "JP": "回収する場合は、DOWNLOAD_OUTPUT_ZIPをONにして実行してください。",
-        "EN": "To collect them, check DOWNLOAD_OUTPUT_ZIP and run the cell."
+        "EN": "To collect them, check DOWNLOAD_OUTPUT_ZIP and run the cell.",
+        "CN": "需要打包下载时勾选 DOWNLOAD_OUTPUT_ZIP 并运行。"
       }
     },
     "stop": {
       "title": {
         "JP": "10. 保存して停止",
-        "EN": "10. Save and stop"
+        "EN": "10. Save and stop",
+        "CN": "10. 保存并停止"
       },
       "unmount": {
         "JP": "Googleドライブへの書き込みを完了して接続を解除する（ランタイムを削除する前はON。同じランタイムで6-1〜6-3のいずれかから再開するならOFF）。",
-        "EN": "Finish writing to Google Drive and disconnect it (on before deleting the runtime; off if you will start again from one of cells 6-1 to 6-3 on the same runtime)."
+        "EN": "Finish writing to Google Drive and disconnect it (on before deleting the runtime; off if you will start again from one of cells 6-1 to 6-3 on the same runtime).",
+        "CN": "完成 Google Drive 写入并卸载云盘（删除运行时前应勾选；如果要在当前运行时重新执行 6-1 至 6-3，则关闭）。"
       },
       "unmounted": {
         "JP": "Googleドライブへの書き込みが完了しました。ランタイムを削除できます。",
-        "EN": "Finished writing to Google Drive. You can delete the runtime."
+        "EN": "Finished writing to Google Drive. You can delete the runtime.",
+        "CN": "Google Drive 写入和卸载已完成，现在可以删除运行时。"
       },
       "still_mounted": {
         "JP": "Googleドライブは接続したままです。ランタイムを削除する前に、FLUSH_AND_UNMOUNTをONにして実行してください。",
-        "EN": "Google Drive is still connected. Before deleting the runtime, run this cell with FLUSH_AND_UNMOUNT checked."
+        "EN": "Google Drive is still connected. Before deleting the runtime, run this cell with FLUSH_AND_UNMOUNT checked.",
+        "CN": "Google Drive 仍处于挂载状态。删除运行时前，请勾选 FLUSH_AND_UNMOUNT 再执行此单元格。"
       },
       "skipped": {
         "JP": "終了する場合は、STOP_NOWをONにして実行してください。",
-        "EN": "To finish, check STOP_NOW and run the cell."
+        "EN": "To finish, check STOP_NOW and run the cell.",
+        "CN": "如需结束，请勾选 STOP_NOW 并运行。"
       }
     },
     "updating": {
@@ -338,20 +428,32 @@
         "- **Steps:** run cell 0 with its box checked (or enter the version to update to as `COMFY_REF` in cell 1) → 1 → 2 → 3 → 11 → one of 6-1 to 6-3. If ComfyUI is running, stop it with cell 10 (`FLUSH_AND_UNMOUNT` off), then run 0 → 1 → 11 → one of 6-1 to 6-3.",
         "- The updated environment is saved to Google Drive and is the one restored from then on.",
         "- If the update fails (for example when a custom node does not fit the new version), ComfyUI is put back to its previous version and nothing on Google Drive changes."
+      ],
+      "CN": [
+        "## 更新 ComfyUI",
+        "",
+        "恢复已有环境时，会继续使用保存时的 ComfyUI 版本。需要保留自定义节点、设置和工作流并更新 ComfyUI 本体时，运行第 11 步。",
+        "",
+        "- **操作顺序：** 勾选第 0 步检查最新版本（或在第 1 步的 `COMFY_REF` 填写目标版本）→ 1 → 2 → 3 → 11 → 6-1/6-2/6-3。如果程序已经启动，先在第 10 步停止并关闭 `FLUSH_AND_UNMOUNT`，然后依次执行 0 → 1 → 11 → 6-1/6-2/6-3。",
+        "- 更新后的环境会保存到 Google Drive，以后默认恢复该版本。",
+        "- 如果更新失败（例如某个自定义节点不兼容），会尝试恢复到之前的 ComfyUI 版本，Google Drive 中的已保存环境保持不变。"
       ]
     },
     "update": {
       "title": {
         "JP": "11. ComfyUIを更新（カスタムノードと設定は維持）",
-        "EN": "11. Update ComfyUI (custom nodes and settings are kept)"
+        "EN": "11. Update ComfyUI (custom nodes and settings are kept)",
+        "CN": "11. 更新 ComfyUI（保留自定义节点与设置）"
       },
       "note": {
         "JP": "`COMFY_REF`（0で最新リリースにした場合はそのバージョン）へ更新します。ComfyUIを停止した状態で実行してください。",
-        "EN": "Updates to `COMFY_REF` (the latest release if you chose it in cell 0). Run this while ComfyUI is stopped."
+        "EN": "Updates to `COMFY_REF` (the latest release if you chose it in cell 0). Run this while ComfyUI is stopped.",
+        "CN": "更新到 `COMFY_REF` 对应版本（若第 0 步已选择最新版本则使用该版本）。请在 ComfyUI 停止时执行。"
       },
       "skipped": {
         "JP": "更新する場合は、UPDATE_COMFYUI_NOWをONにして実行してください。",
-        "EN": "To update, check UPDATE_COMFYUI_NOW and run the cell."
+        "EN": "To update, check UPDATE_COMFYUI_NOW and run the cell.",
+        "CN": "如需更新，勾选 UPDATE_COMFYUI_NOW 后运行。"
       }
     },
     "security": {
@@ -370,6 +472,14 @@
         "- Custom nodes run their own code on the runtime. The notebook keeps Google Drive and the connection secrets away from them, but this is not complete isolation. Install only custom nodes and models you trust.",
         "- Anyone who can connect can install custom nodes, and the nodes in the saved environment run again next time. If you installed a node you do not trust, turn off `RESTORE_SAVED_ENVIRONMENT` in cell 1 and start with a fresh environment.",
         "- Do not use the \"Mount Drive\" button of Colab; connect Drive only through the setup in this notebook."
+      ],
+      "CN": [
+        "## 安全说明",
+        "",
+        "- 6-1 不向公网开放。6-2 和 6-3 只提供需要身份验证的入口：6-2 要求设备输入配对码，6-3 要求通过 Cloudflare Access 登录。",
+        "- 自定义节点会在运行时中执行自己的代码。此 Notebook 会对 Google Drive 和连接密钥采取隔离措施，但并非完全隔离；请只安装可信来源的节点和模型。",
+        "- 任何成功连接的用户都可以安装自定义节点，保存到环境中的节点下次还会运行。如果安装了不可信的节点，请关闭第 1 步中的 `RESTORE_SAVED_ENVIRONMENT`，重新建立干净的环境。",
+        "- 不要点击 Colab 自带的「挂载云端硬盘」按钮；请仅通过本 Notebook 的第 3 步连接 Google Drive。"
       ]
     }
   },
