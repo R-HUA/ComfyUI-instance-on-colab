@@ -487,787 +487,972 @@
     "common": {
       "none": {
         "JP": "なし",
-        "EN": "none"
+        "EN": "none",
+        "CN": "无"
       },
       "unknown": {
         "JP": "不明",
-        "EN": "unknown"
+        "EN": "unknown",
+        "CN": "未知"
       },
       "present": {
         "JP": "あり",
-        "EN": "present"
+        "EN": "present",
+        "CN": "存在"
       },
       "yes": {
         "JP": "あり",
-        "EN": "yes"
+        "EN": "yes",
+        "CN": "是"
       },
       "no": {
         "JP": "なし",
-        "EN": "no"
+        "EN": "no",
+        "CN": "否"
       }
     },
     "path": {
       "use_slashes": {
         "JP": "相対パスには / を使い、ドライブ名を含めないでください。",
-        "EN": "Use / in relative paths and do not include a drive name."
+        "EN": "Use / in relative paths and do not include a drive name.",
+        "CN": "相对路径请使用 /，不要包含盘符。"
       },
       "unsafe": {
         "JP": "安全な相対パスを指定してください。",
-        "EN": "Specify a safe relative path."
+        "EN": "Specify a safe relative path.",
+        "CN": "请指定安全的相对路径。"
       },
       "outside_folder": {
         "JP": "保存先が指定フォルダー外を指しています。",
-        "EN": "The destination points outside the designated folder."
+        "EN": "The destination points outside the designated folder.",
+        "CN": "目标路径超出了指定目录。"
       },
       "symlink": {
         "JP": "保存先にシンボリックリンクがあります。",
-        "EN": "The destination contains a symbolic link."
+        "EN": "The destination contains a symbolic link.",
+        "CN": "目标路径包含符号链接。"
       }
     },
     "command": {
       "running": {
         "JP": "実行中: ",
-        "EN": "Running: "
+        "EN": "Running: ",
+        "CN": "正在执行："
       },
       "failed": {
         "JP": "{stage} が失敗しました: {failure}",
-        "EN": "{stage} failed: {failure}"
+        "EN": "{stage} failed: {failure}",
+        "CN": "{stage} 失败：{failure}"
       },
       "exit_code": {
         "JP": "{stage} が終了コード {code} で失敗しました。直前の出力を確認してください。",
-        "EN": "{stage} failed with exit code {code}. Check the output above."
+        "EN": "{stage} failed with exit code {code}. Check the output above.",
+        "CN": "{stage} 执行失败，退出码 {code}。请检查上方输出。"
       },
       "done": {
         "JP": "完了: {stage}（{seconds:.0f}秒）",
-        "EN": "Done: {stage} ({seconds:.0f}s)"
+        "EN": "Done: {stage} ({seconds:.0f}s)",
+        "CN": "完成：{stage}（{seconds:.0f} 秒）"
       },
       "timed_out": {
         "JP": "時間内に終わりませんでした",
-        "EN": "it did not finish in time"
+        "EN": "it did not finish in time",
+        "CN": "未能在规定时间内完成"
       },
       "output_limit": {
         "JP": "出力が上限を超えました",
-        "EN": "it produced more output than allowed"
+        "EN": "it produced more output than allowed",
+        "CN": "输出内容超过允许的大小"
       }
     },
     "user": {
       "processes_remain": {
         "JP": "ComfyUI用ユーザーのプロセスを終了できませんでした。ランタイムを削除して接続し直してください。",
-        "EN": "Could not stop the processes of the ComfyUI user. Delete the runtime and connect again."
+        "EN": "Could not stop the processes of the ComfyUI user. Delete the runtime and connect again.",
+        "CN": "无法停止 ComfyUI 用户的进程。请删除运行时并重新连接。"
       },
       "setpriv_missing": {
         "JP": "{setpriv} がありません。権限を下げてComfyUIを実行できないため中止します。",
-        "EN": "{setpriv} is missing. Stopping because ComfyUI cannot be run with reduced privileges."
+        "EN": "{setpriv} is missing. Stopping because ComfyUI cannot be run with reduced privileges.",
+        "CN": "缺少 {setpriv}。无法以受限权限运行 ComfyUI，安装已停止。"
       }
     },
     "app": {
       "no_outputs": {
         "JP": "回収する生成ファイルがありません。",
-        "EN": "There are no generated files to collect."
+        "EN": "There are no generated files to collect.",
+        "CN": "没有可供打包的生成文件。"
       },
       "failed": {
         "JP": "{action} に失敗しました: {failure}",
-        "EN": "{action} failed: {failure}"
+        "EN": "{action} failed: {failure}",
+        "CN": "{action} 失败：{failure}"
       },
       "failed_detail": {
         "JP": "{action} に失敗しました: ",
-        "EN": "{action} failed: "
+        "EN": "{action} failed: ",
+        "CN": "{action} 失败："
       }
     },
     "venv": {
       "pip_fallback": {
         "JP": "ノートブック側のpipから仮想環境へ導入できませんでした。OSのensurepipを使います。",
-        "EN": "The notebook pip could not install into the virtual environment. Falling back to the system ensurepip."
+        "EN": "The notebook pip could not install into the virtual environment. Falling back to the system ensurepip.",
+        "CN": "Notebook 的 pip 无法安装到虚拟环境，改用系统的 ensurepip。"
       },
       "ensurepip_missing": {
         "JP": "Python {version}のensurepipが不足しています。{package}をインストールします。",
-        "EN": "ensurepip is missing for Python {version}. Installing {package}."
+        "EN": "ensurepip is missing for Python {version}. Installing {package}.",
+        "CN": "Python {version} 缺少 ensurepip，正在安装 {package}。"
       },
       "package_failed": {
         "JP": "{package}をインストールできませんでした。Colabで apt-cache policy {package} を実行し、提供バージョンとAPTのエラー出力を確認してください。",
-        "EN": "Could not install {package}. Run apt-cache policy {package} in Colab and check the available version and the APT error output."
+        "EN": "Could not install {package}. Run apt-cache policy {package} in Colab and check the available version and the APT error output.",
+        "CN": "无法安装 {package}。请在 Colab 中运行 apt-cache policy {package} 并检查可用版本及 APT 错误输出。"
       },
       "ensurepip_unavailable": {
         "JP": "{package}のインストール後も {python} からensurepipを参照できません。Pythonのインストール先とAPTパッケージを確認してください。",
-        "EN": "After installing {package}, ensurepip is still not available from {python}. Check the Python installation and the APT package."
+        "EN": "After installing {package}, ensurepip is still not available from {python}. Check the Python installation and the APT package.",
+        "CN": "安装 {package} 后，{python} 仍无法使用 ensurepip。请检查 Python 安装及 APT 软件包。"
       }
     },
     "drive": {
       "needs_root": {
         "JP": "Googleドライブの保護にはColabのroot権限を持つLinuxランタイムが必要です。",
-        "EN": "Protecting Google Drive requires a Colab Linux runtime with root privileges."
+        "EN": "Protecting Google Drive requires a Colab Linux runtime with root privileges.",
+        "CN": "保护 Google Drive 需要具有 root 权限的 Colab Linux 运行时。"
       },
       "private_symlink": {
         "JP": "保護ディレクトリにシンボリックリンクがあります。",
-        "EN": "The protected directory contains a symbolic link."
+        "EN": "The protected directory contains a symbolic link.",
+        "CN": "受保护目录包含符号链接。"
       },
       "private_owner": {
         "JP": "保護ディレクトリの所有者がrootではありません。",
-        "EN": "The protected directory is not owned by root."
+        "EN": "The protected directory is not owned by root.",
+        "CN": "受保护目录的所有者不是 root。"
       },
       "mounted_elsewhere": {
         "JP": "別の場所にGoogleドライブがマウントされています。ランタイムを削除し、このノートブックだけでマウントしてください。",
-        "EN": "Google Drive is already mounted somewhere else. Delete the runtime and mount it only from this notebook."
+        "EN": "Google Drive is already mounted somewhere else. Delete the runtime and mount it only from this notebook.",
+        "CN": "Google Drive 已挂载到其他位置。请删除运行时，并仅通过本 Notebook 挂载。"
       },
       "no_mydrive": {
         "JP": "GoogleドライブのMyDriveを確認できません。",
-        "EN": "Could not find MyDrive in Google Drive."
+        "EN": "Could not find MyDrive in Google Drive.",
+        "CN": "在 Google Drive 中找不到 MyDrive。"
       },
       "not_mounted": {
         "JP": "Googleドライブがマウントされていません。セットアップから実行してください。",
-        "EN": "Google Drive is not mounted. Run the notebook from setup."
+        "EN": "Google Drive is not mounted. Run the notebook from setup.",
+        "CN": "Google Drive 尚未挂载，请先运行第 3 步初始化。"
       }
     },
     "models": {
       "synced": {
         "JP": "Googleドライブからモデルを反映しました: {copied}ファイル",
-        "EN": "Models copied from Google Drive: {copied} file(s)"
+        "EN": "Models copied from Google Drive: {copied} file(s)",
+        "CN": "已从 Google Drive 复制模型：{copied} 个文件"
       },
       "linked": {
         "JP": "Googleドライブのモデルを直接参照します（新しく追加: {linked}件）。各モデルは最初に使うときに読み込まれるため、初回は時間がかかります。",
-        "EN": "Reading models directly from Google Drive (newly added: {linked}). Each model is fetched the first time it is used, so its first load takes longer."
+        "EN": "Reading models directly from Google Drive (newly added: {linked}). Each model is fetched the first time it is used, so its first load takes longer.",
+        "CN": "直接从 Google Drive 读取模型（新增：{linked} 个）。首次使用模型时需要读取文件，因此首次加载较慢。"
       },
       "view_place": {
         "JP": "{path} をモデルの参照用フォルダーとして使えません。",
-        "EN": "{path} cannot be used as the folder for reading models."
+        "EN": "{path} cannot be used as the folder for reading models.",
+        "CN": "无法将 {path} 用作模型读取目录。"
       },
       "view_failed": {
         "JP": "Googleドライブのモデルを直接読み込む準備ができませんでした（{reason}）。1の MODEL_ACCESS を copy にして3を実行し直すと、モデルをColabへコピーして使えます。",
-        "EN": "Could not prepare reading models directly from Google Drive ({reason}). Set MODEL_ACCESS to copy in cell 1 and run cell 3 again to copy the models to Colab and use them from there."
+        "EN": "Could not prepare reading models directly from Google Drive ({reason}). Set MODEL_ACCESS to copy in cell 1 and run cell 3 again to copy the models to Colab and use them from there.",
+        "CN": "无法准备从 Google Drive 直接读取模型（{reason}）。请将第 1 步的 MODEL_ACCESS 设为 copy，再运行第 3 步，将模型复制到 Colab 本地。"
       }
     },
     "environment": {
       "archive_special_files": {
         "JP": "環境アーカイブにリンクまたは特殊ファイルが含まれています。",
-        "EN": "The environment archive contains links or special files."
+        "EN": "The environment archive contains links or special files.",
+        "CN": "环境归档中包含链接或特殊文件。"
       },
       "archive_needs_data_filter": {
         "JP": "安全なアーカイブ復元にはPython 3.12以降（またはdata_filter搭載版）が必要です。",
-        "EN": "Restoring the archive safely requires Python 3.12 or later (or a version with data_filter)."
+        "EN": "Restoring the archive safely requires Python 3.12 or later (or a version with data_filter).",
+        "CN": "安全恢复归档需要 Python 3.12 或更高版本（或支持 data_filter 的 Python 版本）。"
       },
       "busy": {
         "JP": "環境が変更中です。インストール完了後に保存を再実行してください。",
-        "EN": "The environment is being modified. Save again after the installation finishes."
+        "EN": "The environment is being modified. Save again after the installation finishes.",
+        "CN": "环境正在修改中，请等待安装完成后重新保存。"
       },
       "unpinned_lock": {
         "JP": "依存関係一覧に固定バージョン以外の行（editable・ローカルパス・pipオプション）があります。通常のpipパッケージへ置き換えてください。",
-        "EN": "The dependency list contains lines other than pinned versions (editable installs, local paths or pip options). Replace them with regular pip packages."
+        "EN": "The dependency list contains lines other than pinned versions (editable installs, local paths or pip options). Replace them with regular pip packages.",
+        "CN": "依赖列表包含未锁定版本的条目（可编辑安装、本地路径或 pip 选项）。请改为普通的 pip 软件包依赖。"
       }
     },
     "cloudflared": {
       "download_failed": {
         "JP": "cloudflaredのダウンロードに失敗しました。",
-        "EN": "Failed to download cloudflared."
+        "EN": "Failed to download cloudflared.",
+        "CN": "下载 cloudflared 失败。"
       },
       "sha256_mismatch": {
         "JP": "cloudflaredのSHA256が公開値と一致しません。実行を中止します。",
-        "EN": "The SHA256 of cloudflared does not match the published value. Aborting."
+        "EN": "The SHA256 of cloudflared does not match the published value. Aborting.",
+        "CN": "cloudflared 的 SHA256 与发布的校验值不一致，已终止操作。"
       }
     },
     "setup": {
       "not_colab": {
         "JP": "このセットアップはroot権限のGoogle Colab Linux GPUランタイム専用です。",
-        "EN": "This setup only runs on a Google Colab Linux GPU runtime with root privileges."
+        "EN": "This setup only runs on a Google Colab Linux GPU runtime with root privileges.",
+        "CN": "此安装过程仅适用于具有 root 权限的 Google Colab Linux GPU 运行时。"
       },
       "already_done": {
         "JP": "このランタイムはセットアップ済みです。再セットアップにはランタイムを削除して接続し直してください。",
-        "EN": "This runtime is already set up. To set up again, delete the runtime and reconnect."
+        "EN": "This runtime is already set up. To set up again, delete the runtime and reconnect.",
+        "CN": "此运行时已完成初始化。如需重新初始化，请删除运行时并重新连接。"
       },
       "invalid_ref": {
         "JP": "ComfyUIのrefが不正です。",
-        "EN": "Invalid ComfyUI ref."
+        "EN": "Invalid ComfyUI ref.",
+        "CN": "ComfyUI 版本引用无效。"
       },
       "interval_too_short": {
         "JP": "保存間隔は60秒以上にしてください。",
-        "EN": "The save interval must be at least 60 seconds."
+        "EN": "The save interval must be at least 60 seconds.",
+        "CN": "自动保存间隔至少需要 60 秒。"
       },
       "invalid_apt_package": {
         "JP": "APTパッケージ名が不正です。",
-        "EN": "Invalid APT package name."
+        "EN": "Invalid APT package name.",
+        "CN": "APT 软件包名称无效。"
       },
       "no_gpu": {
         "JP": "Colabのランタイム設定でGPUを選択してください。",
-        "EN": "Select a GPU in the Colab runtime settings."
+        "EN": "Select a GPU in the Colab runtime settings.",
+        "CN": "请在 Colab 的运行时设置中选择 GPU。"
       },
       "fresh_environment": {
         "JP": "保存済みの環境を復元せず、新しい環境を作成します。Googleドライブ上の保存は次回の保存から新しい世代に置き換わります。",
-        "EN": "Not restoring the saved environment; creating a new one. The next save starts a new generation on Google Drive."
+        "EN": "Not restoring the saved environment; creating a new one. The next save starts a new generation on Google Drive.",
+        "CN": "不恢复已保存环境，正在创建全新环境。下次保存将在 Google Drive 中建立新版本。"
       },
       "invalid_archive_name": {
         "JP": "保存情報のアーカイブ名が不正です。",
-        "EN": "The archive name in the save record is invalid."
+        "EN": "The archive name in the save record is invalid.",
+        "CN": "保存记录中的归档文件名无效。"
       },
       "python_changed": {
         "JP": "保存時とColabのPythonバージョンが違います。環境移行が必要です。既存保存を上書きしません。",
-        "EN": "The Python version differs from the one the environment was saved with. The environment must be migrated. The existing save is not overwritten."
+        "EN": "The Python version differs from the one the environment was saved with. The environment must be migrated. The existing save is not overwritten.",
+        "CN": "Python 版本与保存环境时不同，需要迁移环境；现有存档不会被覆盖。"
       },
       "archive_sha256_mismatch": {
         "JP": "保存アーカイブのSHA256が一致しません。復元を中止します。",
-        "EN": "The SHA256 of the saved archive does not match. Restore aborted."
+        "EN": "The SHA256 of the saved archive does not match. Restore aborted.",
+        "CN": "已保存归档的 SHA256 不匹配，恢复已中止。"
       },
       "restored": {
         "JP": "Drive上の環境を復元しました。保存時刻:",
-        "EN": "Restored the environment from Drive. Saved at:"
+        "EN": "Restored the environment from Drive. Saved at:",
+        "CN": "已从 Google Drive 恢复环境。保存时间："
       },
       "restored_nodes": {
         "JP": "復元したカスタムノード:",
-        "EN": "Restored custom nodes:"
+        "EN": "Restored custom nodes:",
+        "CN": "已恢复的自定义节点："
       },
       "source_incomplete": {
         "JP": "復元したComfyUIソースが不完全です。",
-        "EN": "The restored ComfyUI source is incomplete."
+        "EN": "The restored ComfyUI source is incomplete.",
+        "CN": "恢复的 ComfyUI 源码不完整。"
       },
       "saved_apt_packages": {
         "JP": "保存時に使われていた追加のOSパッケージ:",
-        "EN": "Additional OS packages used when the environment was saved:"
+        "EN": "Additional OS packages used when the environment was saved:",
+        "CN": "保存环境时使用的额外系统软件包："
       },
       "saved_apt_packages_hint": {
         "JP": "必要な場合は、1のAPT_PACKAGESへ追加して新しいランタイムで実行し直してください（自動では導入しません）。",
-        "EN": "If you need them, add them to APT_PACKAGES in cell 1 and run again on a new runtime (they are not installed automatically)."
+        "EN": "If you need them, add them to APT_PACKAGES in cell 1 and run again on a new runtime (they are not installed automatically).",
+        "CN": "如仍需要这些软件包，请将其添加到第 1 步的 APT_PACKAGES，并在新运行时重新执行；不会自动安装。"
       },
       "no_torch": {
         "JP": "Colabの標準PyTorch CUDA環境を検出できません。GPUランタイムを確認してください。",
-        "EN": "Could not detect the standard Colab PyTorch CUDA environment. Check the GPU runtime."
+        "EN": "Could not detect the standard Colab PyTorch CUDA environment. Check the GPU runtime.",
+        "CN": "未检测到标准 Colab PyTorch CUDA 环境，请检查 GPU 运行时。"
       },
       "invalid_torch_mirror": {
         "JP": "保存されたPyTorchミラーが不正です。",
-        "EN": "The saved PyTorch mirror is invalid."
+        "EN": "The saved PyTorch mirror is invalid.",
+        "CN": "已保存的 PyTorch 镜像地址无效。"
       },
       "copying_models": {
         "JP": "DriveのモデルをColabへコピーします（モデル全体のローカル空き容量が必要です）。",
-        "EN": "Copying models from Drive to Colab (needs local free space for all models)."
+        "EN": "Copying models from Drive to Colab (needs local free space for all models).",
+        "CN": "正在将模型从 Google Drive 复制到 Colab（需要足够的本地存储空间）。"
       },
       "done": {
         "JP": "セットアップ完了。Googleドライブの保存先: MyDrive/",
-        "EN": "Setup complete. Models folder on Google Drive: MyDrive/"
+        "EN": "Setup complete. Models folder on Google Drive: MyDrive/",
+        "CN": "初始化完成。Google Drive 模型目录：MyDrive/"
       },
       "invalid_model_access": {
         "JP": "MODEL_ACCESS は direct か copy を指定してください。",
-        "EN": "MODEL_ACCESS must be direct or copy."
+        "EN": "MODEL_ACCESS must be direct or copy.",
+        "CN": "MODEL_ACCESS 必须是 direct 或 copy。"
       },
       "sage_enabled": {
         "JP": "SageAttentionを使います。",
-        "EN": "Using SageAttention."
+        "EN": "Using SageAttention.",
+        "CN": "正在使用 SageAttention。"
       },
       "sage_unavailable": {
         "JP": "SageAttentionをこのランタイムで使えないため、標準のattentionで起動します。原因は上の出力を確認してください。",
-        "EN": "SageAttention cannot be used on this runtime, so ComfyUI starts with the standard attention. See the output above for the cause."
+        "EN": "SageAttention cannot be used on this runtime, so ComfyUI starts with the standard attention. See the output above for the cause.",
+        "CN": "此运行时无法使用 SageAttention，将使用标准注意力启动 ComfyUI。具体原因请查看上方输出。"
       }
     },
     "download": {
       "hf_repository": {
         "JP": "Hugging FaceのリポジトリIDを author/repository 形式で指定してください。",
-        "EN": "Specify the Hugging Face repository ID as author/repository."
+        "EN": "Specify the Hugging Face repository ID as author/repository.",
+        "CN": "请将 Hugging Face 仓库 ID 填写为 作者/仓库。"
       },
       "hf_revision": {
         "JP": "revisionを指定してください。",
-        "EN": "Specify a revision."
+        "EN": "Specify a revision.",
+        "CN": "请指定版本引用。"
       },
       "civitai_version": {
         "JP": "CivitaiのモデルバージョンIDを正の整数で指定してください。",
-        "EN": "Specify the Civitai model version ID as a positive integer."
+        "EN": "Specify the Civitai model version ID as a positive integer.",
+        "CN": "请填写正整数形式的 Civitai 模型版本 ID。"
       },
       "unknown_source": {
         "JP": "ダウンロード元をHugging FaceまたはCivitaiから選択してください。",
-        "EN": "Choose Hugging Face or Civitai as the download source."
+        "EN": "Choose Hugging Face or Civitai as the download source.",
+        "CN": "请选择 Hugging Face 或 Civitai 作为下载来源。"
       },
       "hf_url": {
         "JP": "Hugging Faceは、Files and versionsで開いたファイルのURL（…/blob/… または …/resolve/…）を指定してください。",
-        "EN": "For Hugging Face, give the URL of a file opened under Files and versions (…/blob/… or …/resolve/…)."
+        "EN": "For Hugging Face, give the URL of a file opened under Files and versions (…/blob/… or …/resolve/…).",
+        "CN": "Hugging Face 请提供 Files and versions 中具体文件的 URL（…/blob/… 或 …/resolve/…）。"
       },
       "civitai_url": {
         "JP": "Civitaiは、バージョンを選んだページのURL（…?modelVersionId=…）かダウンロードリンクを指定してください。",
-        "EN": "For Civitai, give the URL of the page with a version selected (…?modelVersionId=…) or the download link."
+        "EN": "For Civitai, give the URL of the page with a version selected (…?modelVersionId=…) or the download link.",
+        "CN": "Civitai 请提供已选中版本的页面链接（…?modelVersionId=…）或直接下载链接。"
       },
       "unsupported_url": {
         "JP": "https://huggingface.co/ または https://civitai.com/ のURLを指定してください。",
-        "EN": "Give a URL on https://huggingface.co/ or https://civitai.com/."
+        "EN": "Give a URL on https://huggingface.co/ or https://civitai.com/.",
+        "CN": "请提供 https://huggingface.co/ 或 https://civitai.com/ 上的 URL。"
       },
       "filename_has_folder": {
         "JP": "保存名にフォルダーを含めないでください。保存先はMODEL_FOLDERで指定します。",
-        "EN": "Do not include a folder in the file name. Set the destination with MODEL_FOLDER."
+        "EN": "Do not include a folder in the file name. Set the destination with MODEL_FOLDER.",
+        "CN": "文件名中不要包含目录。请通过 MODEL_FOLDER 选择保存位置。"
       },
       "not_https": {
         "JP": "ダウンロード先には認証情報を含まないHTTPS URLが必要です。",
-        "EN": "The download address must be an HTTPS URL without credentials."
+        "EN": "The download address must be an HTTPS URL without credentials.",
+        "CN": "下载地址必须是没有账号密码的 HTTPS URL。"
       },
       "local_redirect": {
         "JP": "ローカルサービスへのリダイレクトを拒否しました。",
-        "EN": "Refused a redirect to a local service."
+        "EN": "Refused a redirect to a local service.",
+        "CN": "已拒绝重定向至本地服务。"
       },
       "unresolved_host": {
         "JP": "ダウンロード先のホスト名を解決できません。",
-        "EN": "Could not resolve the host name of the download address."
+        "EN": "Could not resolve the host name of the download address.",
+        "CN": "无法解析下载地址的主机名。"
       },
       "private_redirect": {
         "JP": "プライベートIPへのリダイレクトを拒否しました。",
-        "EN": "Refused a redirect to a private IP address."
+        "EN": "Refused a redirect to a private IP address.",
+        "CN": "已拒绝重定向至私有 IP 地址。"
       },
       "redirect_without_target": {
         "JP": "ダウンロードの転送先がありません。",
-        "EN": "The download redirect has no destination."
+        "EN": "The download redirect has no destination.",
+        "CN": "下载重定向未提供目标地址。"
       },
       "http_error": {
         "JP": "モデル取得失敗（HTTP {status}）。利用条件・アクセス権・トークンを確認してください。",
-        "EN": "Model download failed (HTTP {status}). Check the terms of use, your access rights and the token."
+        "EN": "Model download failed (HTTP {status}). Check the terms of use, your access rights and the token.",
+        "CN": "模型下载失败（HTTP {status}）。请检查使用条款、访问权限和令牌。"
       },
       "not_a_model": {
         "JP": "モデルではなくHTML/JSONが返されました。ファイル指定を確認してください。",
-        "EN": "Received HTML/JSON instead of a model. Check which file you specified."
+        "EN": "Received HTML/JSON instead of a model. Check which file you specified.",
+        "CN": "下载内容是 HTML/JSON，并非模型文件。请检查指定的文件。"
       },
       "empty": {
         "JP": "ダウンロードファイルが空です。",
-        "EN": "The downloaded file is empty."
+        "EN": "The downloaded file is empty.",
+        "CN": "下载到的文件为空。"
       },
       "too_many_redirects": {
         "JP": "リダイレクト回数が上限に達しました。",
-        "EN": "Too many redirects."
+        "EN": "Too many redirects.",
+        "CN": "重定向次数过多。"
       },
       "host_not_allowed": {
         "JP": "ダウンロード元はhuggingface.coまたはcivitai.comのみです。",
-        "EN": "Downloads are only allowed from huggingface.co or civitai.com."
+        "EN": "Downloads are only allowed from huggingface.co or civitai.com.",
+        "CN": "仅允许从 huggingface.co 或 civitai.com 下载。"
       },
       "url_has_query": {
         "JP": "元URLにクエリや接続鍵を含めないでください。入力フォームからURLを生成してください。",
-        "EN": "Do not include a query or access key in the source URL. Generate the URL from the input form."
+        "EN": "Do not include a query or access key in the source URL. Generate the URL from the input form.",
+        "CN": "源 URL 不应包含查询参数或访问密钥。请通过输入表单生成 URL。"
       },
       "invalid_sha256": {
         "JP": "SHA256は64桁の16進数で指定してください。",
-        "EN": "SHA256 must be 64 hexadecimal digits."
+        "EN": "SHA256 must be 64 hexadecimal digits.",
+        "CN": "SHA256 必须为 64 位十六进制字符。"
       },
       "exists": {
         "JP": "Googleドライブに同名モデルが存在します。別の保存名を指定してください。",
-        "EN": "A model with the same name already exists on Google Drive. Choose a different file name."
+        "EN": "A model with the same name already exists on Google Drive. Choose a different file name.",
+        "CN": "Google Drive 中已经存在同名模型，请换一个文件名。"
       },
       "sha256_mismatch": {
         "JP": "モデルのSHA256が一致しません。確定ファイルとして保存しません。",
-        "EN": "The SHA256 of the model does not match. It is not saved."
+        "EN": "The SHA256 of the model does not match. It is not saved.",
+        "CN": "模型 SHA256 校验不通过，文件未保存。"
       },
       "no_filename": {
         "JP": "配布元からファイル名を取得できませんでした。保存名を指定してください。",
-        "EN": "The site did not provide a file name. Specify one."
+        "EN": "The site did not provide a file name. Specify one.",
+        "CN": "网站未提供文件名，请手动填写。"
       },
       "exists_not_overwritten": {
         "JP": "Googleドライブに同名モデルが存在します。上書きしません。別の保存名を指定してください。",
-        "EN": "A model with the same name already exists on Google Drive. It is not overwritten. Choose a different file name."
+        "EN": "A model with the same name already exists on Google Drive. It is not overwritten. Choose a different file name.",
+        "CN": "Google Drive 中已有同名模型，未覆盖现有文件。请换一个文件名。"
       },
       "saved": {
         "JP": "Googleドライブへ保存し、Colabへ反映しました:",
-        "EN": "Saved to Google Drive and copied to Colab:"
+        "EN": "Saved to Google Drive and copied to Colab:",
+        "CN": "已保存到 Google Drive，并复制到 Colab："
       },
       "connection_failed": {
         "JP": "モデルのダウンロード通信に失敗しました。接続・アクセス権を確認してください。",
-        "EN": "The model download connection failed. Check the connection and your access rights."
+        "EN": "The model download connection failed. Check the connection and your access rights.",
+        "CN": "模型下载连接失败，请检查网络连接和访问权限。"
       },
       "label": {
         "JP": "ダウンロード",
-        "EN": "Downloading"
+        "EN": "Downloading",
+        "CN": "正在下载"
       },
       "progress": {
         "JP": "ダウンロード中: {done:.0f} MB / {total:.0f} MB（{percent:.0f}%）",
-        "EN": "Downloading: {done:.0f} MB / {total:.0f} MB ({percent:.0f}%)"
+        "EN": "Downloading: {done:.0f} MB / {total:.0f} MB ({percent:.0f}%)",
+        "CN": "正在下载：{done:.0f} MB / {total:.0f} MB（{percent:.0f}%）"
       },
       "progress_size": {
         "JP": "ダウンロード中: {done:.0f} MB",
-        "EN": "Downloading: {done:.0f} MB"
+        "EN": "Downloading: {done:.0f} MB",
+        "CN": "正在下载：{done:.0f} MB"
       },
       "saved_runtime": {
         "JP": "このランタイムに保存しました（Googleドライブには保存されません）:",
-        "EN": "Saved on this runtime (not saved to Google Drive):"
+        "EN": "Saved on this runtime (not saved to Google Drive):",
+        "CN": "已保存到当前运行时（未保存到 Google Drive）："
       },
       "exists_runtime": {
         "JP": "このランタイムに同じ名前のモデルがあります。別の保存名を指定してください。",
-        "EN": "This runtime already has a model with the same name. Choose a different file name."
+        "EN": "This runtime already has a model with the same name. Choose a different file name.",
+        "CN": "当前运行时已有同名模型，请换一个文件名。"
       }
     },
     "proxy": {
       "unauthorized": {
         "JP": "認証が必要です。ノートブックが表示したURLをブラウザーで開き、ペアリングコードを入力してください。",
-        "EN": "Authentication required. Open the URL shown by the notebook in a browser and enter the pairing code."
+        "EN": "Authentication required. Open the URL shown by the notebook in a browser and enter the pairing code.",
+        "CN": "需要身份验证。请在浏览器中打开 Notebook 显示的 URL 并输入配对码。"
       },
       "cross_origin": {
         "JP": "異なるOriginからのアクセスは許可されていません。",
-        "EN": "Access from a different origin is not allowed."
+        "EN": "Access from a different origin is not allowed.",
+        "CN": "不允许来自其他来源的访问。"
       },
       "websocket_error": {
         "JP": "WebSocket中継エラー:",
-        "EN": "WebSocket relay error:"
+        "EN": "WebSocket relay error:",
+        "CN": "WebSocket 转发错误："
       },
       "upstream_down": {
         "JP": "ComfyUIが起動中、または停止しています。",
-        "EN": "ComfyUI is starting or stopped."
+        "EN": "ComfyUI is starting or stopped.",
+        "CN": "ComfyUI 正在启动或已经停止。"
       },
       "origin_rejected": {
         "JP": "別のサイトからの要求を拒否しました: Origin {origin} / Host {host}",
-        "EN": "Refused a request from another site: Origin {origin} / Host {host}"
+        "EN": "Refused a request from another site: Origin {origin} / Host {host}",
+        "CN": "已拒绝其他站点的请求：Origin {origin} / Host {host}"
       },
       "access_required": {
         "JP": "Cloudflare Accessの認証を確認できません。公開ホスト名のURLから接続してください。ログイン後もこの表示が出る場合は、シークレット CF_ACCESS_AUD のAUDタグを確認してください。",
-        "EN": "The Cloudflare Access sign-in could not be verified. Connect through the URL of the public hostname. If this appears after signing in, check the AUD tag in the secret CF_ACCESS_AUD."
+        "EN": "The Cloudflare Access sign-in could not be verified. Connect through the URL of the public hostname. If this appears after signing in, check the AUD tag in the secret CF_ACCESS_AUD.",
+        "CN": "无法验证 Cloudflare Access 登录状态。请通过公开主机名 URL 连接。如果已登录仍出现此提示，请检查密钥 CF_ACCESS_AUD 中的 AUD 标签。"
       },
       "site_rejected": {
         "JP": "別のサイトからの要求を拒否しました: {method} {path}（Sec-Fetch-Site: {site}）",
-        "EN": "Refused a request from another site: {method} {path} (Sec-Fetch-Site: {site})"
+        "EN": "Refused a request from another site: {method} {path} (Sec-Fetch-Site: {site})",
+        "CN": "已拒绝其他站点的请求：{method} {path}（Sec-Fetch-Site: {site}）"
       }
     },
     "diagnosis": {
       "route": {
         "JP": "  [{mark}] {status} {seconds:6.2f}秒 {size:>9}B {route}",
-        "EN": "  [{mark}] {status} {seconds:6.2f}s {size:>9}B {route}"
+        "EN": "  [{mark}] {status} {seconds:6.2f}s {size:>9}B {route}",
+        "CN": "  [{mark}] {status} {seconds:6.2f}秒 {size:>9}B {route}"
       },
       "assets": {
         "JP": "  [{mark}] 画面のJS/CSS {total}件: 失敗{failed}件 / 展開後{megabytes:.1f}MB / {elapsed:.2f}秒 / 圧縮あり{compressed}件",
-        "EN": "  [{mark}] UI JS/CSS {total} files: {failed} failed / {megabytes:.1f}MB uncompressed / {elapsed:.2f}s / {compressed} compressed"
+        "EN": "  [{mark}] UI JS/CSS {total} files: {failed} failed / {megabytes:.1f}MB uncompressed / {elapsed:.2f}s / {compressed} compressed",
+        "CN": "  [{mark}] UI JS/CSS 共 {total} 个文件：失败 {failed} 个 / 未压缩 {megabytes:.1f}MB / 耗时 {elapsed:.2f}秒 / 压缩 {compressed}"
       },
       "failed_asset": {
         "JP": "       {status} {seconds:.2f}秒 {route}",
-        "EN": "       {status} {seconds:.2f}s {route}"
+        "EN": "       {status} {seconds:.2f}s {route}",
+        "CN": "       {status} {seconds:.2f}秒 {route}"
       },
       "websocket": {
         "JP": "  [{mark}] WebSocket 最初のメッセージ: {kind}",
-        "EN": "  [{mark}] WebSocket first message: {kind}"
+        "EN": "  [{mark}] WebSocket first message: {kind}",
+        "CN": "  [{mark}] WebSocket 第一条消息：{kind}"
       },
       "not_running": {
         "JP": "ComfyUIが起動していません。6-1〜6-3のいずれかを実行してから診断してください。",
-        "EN": "ComfyUI is not running. Run one of cells 6-1 to 6-3 before the diagnosis."
+        "EN": "ComfyUI is not running. Run one of cells 6-1 to 6-3 before the diagnosis.",
+        "CN": "ComfyUI 尚未运行。请先运行 6-1、6-2 或 6-3，再执行诊断。"
       },
       "target_comfyui": {
         "JP": "ComfyUI本体（127.0.0.1:8188）",
-        "EN": "ComfyUI (127.0.0.1:8188)"
+        "EN": "ComfyUI (127.0.0.1:8188)",
+        "CN": "ComfyUI（127.0.0.1:8188）"
       },
       "target_proxy": {
         "JP": "認証プロキシ（127.0.0.1:8189）",
-        "EN": "Auth proxy (127.0.0.1:8189)"
+        "EN": "Auth proxy (127.0.0.1:8189)",
+        "CN": "认证代理（127.0.0.1:8189）"
       },
       "target_public": {
         "JP": "公開URL（Cloudflare経由）",
-        "EN": "Public URL (via Cloudflare)"
+        "EN": "Public URL (via Cloudflare)",
+        "CN": "公共 URL（通过 Cloudflare）"
       },
       "failed_at": {
         "JP": "結果: {label} で失敗しています。ここより手前は正常です。",
-        "EN": "Result: failing at {label}. Everything before it is fine."
+        "EN": "Result: failing at {label}. Everything before it is fine.",
+        "CN": "诊断结果：问题发生在 {label}。之前的环节均正常。"
       },
       "all_ok": {
         "JP": "結果: Colab側は公開URLまで正常です。画面が出ない場合はPC側（ブラウザー拡張・広告ブロック・セキュリティソフト）を確認してください。",
-        "EN": "Result: everything on the Colab side works up to the public URL. If the UI does not appear, check your PC (browser extensions, ad blockers, security software)."
+        "EN": "Result: everything on the Colab side works up to the public URL. If the UI does not appear, check your PC (browser extensions, ad blockers, security software).",
+        "CN": "诊断结果：Colab 侧直至公共 URL 的各环节均正常。如果界面无法显示，请检查电脑上的浏览器扩展、广告拦截器和安全软件。"
       },
       "colab_ok": {
         "JP": "結果: ComfyUI本体と認証プロキシは正常です。Colabのポート転送はここからは確認できません。画面が出ない場合は、ブラウザーがこのノートブックと同じGoogleアカウントでログインしているか、サードパーティCookieの制限やブラウザー拡張が妨げていないかを確認してください。",
-        "EN": "Result: ComfyUI and the auth proxy work. Colab's port forwarding cannot be checked from here. If the UI does not appear, check that the browser is signed in to the same Google account as this notebook, and that third-party cookie restrictions or browser extensions are not in the way."
+        "EN": "Result: ComfyUI and the auth proxy work. Colab's port forwarding cannot be checked from here. If the UI does not appear, check that the browser is signed in to the same Google account as this notebook, and that third-party cookie restrictions or browser extensions are not in the way.",
+        "CN": "诊断结果：ComfyUI 和认证代理工作正常。这里无法检查 Colab 端口转发。如果界面无法显示，请确认浏览器登录的是运行此 Notebook 的 Google 账号，并检查第三方 Cookie 限制及浏览器扩展。"
       },
       "access_ok": {
         "JP": "結果: ComfyUI本体は正常です。認証プロキシとCloudflare側は、Accessのログインが必要なためここからは確認できません。画面が出ない場合は、7のtunnel.logと、Cloudflareのトンネル・Accessアプリケーションの設定を確認してください。",
-        "EN": "Result: ComfyUI works. The auth proxy and the Cloudflare side cannot be checked from here, because they need an Access sign-in. If the UI does not appear, check tunnel.log in cell 7 and the tunnel and Access application settings in Cloudflare."
+        "EN": "Result: ComfyUI works. The auth proxy and the Cloudflare side cannot be checked from here, because they need an Access sign-in. If the UI does not appear, check tunnel.log in cell 7 and the tunnel and Access application settings in Cloudflare.",
+        "CN": "诊断结果：ComfyUI 工作正常。认证代理和 Cloudflare 侧需要 Access 登录，无法从这里检查。如果界面无法显示，请查看第 7 步的 tunnel.log，以及 Cloudflare 中的隧道和 Access 应用配置。"
       }
     },
     "isolation": {
       "heading": {
         "JP": "アプリ用ユーザー（{user}）から到達できるローカルサービス:",
-        "EN": "Local services reachable by the application user ({user}):"
+        "EN": "Local services reachable by the application user ({user}):",
+        "CN": "应用用户（{user}）可访问的本地服务："
       },
       "comfyui": {
         "JP": "ComfyUI本体",
-        "EN": "ComfyUI"
+        "EN": "ComfyUI",
+        "CN": "ComfyUI"
       },
       "proxy": {
         "JP": "認証プロキシ",
-        "EN": "auth proxy"
+        "EN": "auth proxy",
+        "CN": "认证代理"
       },
       "unix_sockets": {
         "JP": "接続できたUnixソケット（待受{listening}件中{reachable}件）:",
-        "EN": "Unix sockets that accepted a connection ({reachable} of {listening} listening):"
+        "EN": "Unix sockets that accepted a connection ({reachable} of {listening} listening):",
+        "CN": "可成功连接的 Unix Socket（{listening} 个监听中有 {reachable} 个）："
       },
       "kernel": {
         "JP": "カーネル:",
-        "EN": "Kernel:"
+        "EN": "Kernel:",
+        "CN": "内核："
       },
       "root_capabilities": {
         "JP": "rootの権限:",
-        "EN": "root capabilities:"
+        "EN": "root capabilities:",
+        "CN": "root 权限能力："
       },
       "no_command": {
         "JP": "コマンドなし",
-        "EN": "command not found"
+        "EN": "command not found",
+        "CN": "找不到命令"
       },
       "available": {
         "JP": "利用可",
-        "EN": "available"
+        "EN": "available",
+        "CN": "可用"
       },
       "unavailable": {
         "JP": "利用不可",
-        "EN": "unavailable"
+        "EN": "unavailable",
+        "CN": "不可用"
       }
     },
     "supervisor": {
       "autosave_failed": {
         "JP": "環境の自動保存に失敗。終了前に保存セルを実行してください。",
-        "EN": "Automatic save of the environment failed. Run the save cell before you finish."
+        "EN": "Automatic save of the environment failed. Run the save cell before you finish.",
+        "CN": "自动保存环境失败。结束使用前请手动执行保存单元格。"
       },
       "save_before_restart_failed": {
         "JP": "再起動前の保存失敗",
-        "EN": "Save before restart failed"
+        "EN": "Save before restart failed",
+        "CN": "重新启动前保存失败"
       },
       "restarting": {
         "JP": "ComfyUIの終了を検出。10秒後に再起動します。",
-        "EN": "ComfyUI exited. Restarting in 10 seconds."
+        "EN": "ComfyUI exited. Restarting in 10 seconds.",
+        "CN": "ComfyUI 已退出，将在 10 秒后重新启动。"
       },
       "restart_limit": {
         "JP": "ComfyUIの再起動上限に達しました。comfy.logを確認してください。",
-        "EN": "ComfyUI reached the restart limit. Check comfy.log."
+        "EN": "ComfyUI reached the restart limit. Check comfy.log.",
+        "CN": "ComfyUI 已达到最大重启次数，请检查 comfy.log。"
       }
     },
     "start": {
       "already_running": {
         "JP": "既に起動済みです。再起動は停止セルの後に実行してください。",
-        "EN": "Already running. To restart, run the stop cell first."
+        "EN": "Already running. To restart, run the stop cell first.",
+        "CN": "ComfyUI 已在运行。需要重启时，请先执行停止单元格。"
       },
       "proxy_exited_port": {
         "JP": "認証プロキシが終了しました。8189番ポートが使用中の可能性があります。ログセルのproxy.logを確認してください。",
-        "EN": "The auth proxy exited. Port 8189 may be in use. Check proxy.log in the log cell."
+        "EN": "The auth proxy exited. Port 8189 may be in use. Check proxy.log in the log cell.",
+        "CN": "认证代理已退出，8189 端口可能被占用。请查看代理日志 proxy.log。"
       },
       "proxy_not_started": {
         "JP": "認証プロキシが起動しませんでした。",
-        "EN": "The auth proxy did not start."
+        "EN": "The auth proxy did not start.",
+        "CN": "认证代理未能启动。"
       },
       "comfyui_timeout": {
         "JP": "ComfyUIが5分以内に起動しませんでした。ログセルを確認してください。",
-        "EN": "ComfyUI did not start within 5 minutes. Check the log cell."
+        "EN": "ComfyUI did not start within 5 minutes. Check the log cell.",
+        "CN": "ComfyUI 在 5 分钟内未能启动，请检查日志单元格。"
       },
       "proxy_exited": {
         "JP": "認証プロキシが終了しました。ログセルのproxy.logを確認してください。",
-        "EN": "The auth proxy exited. Check proxy.log in the log cell."
+        "EN": "The auth proxy exited. Check proxy.log in the log cell.",
+        "CN": "认证代理已退出，请查看 proxy.log。"
       },
       "url_auto_download": {
         "JP": "Remote Connectionでは Auto-download outputs を有効にし、PC上の保存先を設定してください。",
-        "EN": "For Remote Connection, enable Auto-download outputs and set the output folder on your PC."
+        "EN": "For Remote Connection, enable Auto-download outputs and set the output folder on your PC.",
+        "CN": "使用远程连接时，请启用 Auto-download outputs，并设置电脑上的输出目录。"
       },
       "tunnel_exited": {
         "JP": "Quick Tunnelが終了しました。tunnel.logを確認してください。",
-        "EN": "Quick Tunnel exited. Check tunnel.log."
+        "EN": "Quick Tunnel exited. Check tunnel.log.",
+        "CN": "Quick Tunnel 已退出，请查看 tunnel.log。"
       },
       "no_tunnel_url": {
         "JP": "Quick Tunnel URLを取得できませんでした。",
-        "EN": "Could not get the Quick Tunnel URL."
+        "EN": "Could not get the Quick Tunnel URL.",
+        "CN": "无法获取 Quick Tunnel URL。"
       },
       "tunnel_heading": {
         "JP": "Comfy Desktop > Remote Connection に入力するURL（通常のブラウザーでも開けます）:",
-        "EN": "URL to enter in Comfy Desktop > Remote Connection (a regular browser can open it too):"
+        "EN": "URL to enter in Comfy Desktop > Remote Connection (a regular browser can open it too):",
+        "CN": "在 Comfy Desktop 的 Remote Connection 中输入以下 URL（也可使用普通浏览器打开）："
       },
       "pairing_code": {
         "JP": "ペアリングコード: {code}（{minutes}分間・1回だけ有効）",
-        "EN": "Pairing code: {code} (works once, for {minutes} minutes)"
+        "EN": "Pairing code: {code} (works once, for {minutes} minutes)",
+        "CN": "配对码：{code}（仅限使用一次，有效期 {minutes} 分钟）"
       },
       "pairing_note": {
         "JP": "URLを開くとコードの入力画面が出ます。別の端末を追加するときは、6-2の NEW_PAIRING_CODE をONにして実行してください。停止するとURLと接続済みの端末は無効になります。",
-        "EN": "Opening the URL asks for the code. To add another device, run cell 6-2 with NEW_PAIRING_CODE checked. Stopping ends the URL and every connected device."
+        "EN": "Opening the URL asks for the code. To add another device, run cell 6-2 with NEW_PAIRING_CODE checked. Stopping ends the URL and every connected device.",
+        "CN": "打开 URL 后需输入配对码。要添加其他设备，请在第 6-2 步勾选 NEW_PAIRING_CODE 后重新运行。停止后 URL 及所有连接均失效。"
       },
       "colab_heading": {
         "JP": "このブラウザーで開くURL（このノートブックを実行しているGoogleアカウントでのみ開けます）:",
-        "EN": "URL to open in this browser (only the Google account that runs this notebook can open it):"
+        "EN": "URL to open in this browser (only the Google account that runs this notebook can open it):",
+        "CN": "在当前浏览器中打开以下 URL（仅运行此 Notebook 的 Google 账号可访问）："
       },
       "colab_note": {
         "JP": "Comfy Desktopや別の端末からは接続できません。生成物はComfyUIの画面から保存するか、9で回収してください。",
-        "EN": "Comfy Desktop and other devices cannot connect this way. Save generated files from the ComfyUI page, or collect them with cell 9."
+        "EN": "Comfy Desktop and other devices cannot connect this way. Save generated files from the ComfyUI page, or collect them with cell 9.",
+        "CN": "Comfy Desktop 和其他设备无法通过此方式连接。请在 ComfyUI 页面下载生成文件，或在第 9 步打包下载。"
       },
       "colab_unavailable": {
         "JP": "Colabのポート転送のアドレスを取得できませんでした。Colabのノートブック上で実行してください。",
-        "EN": "Could not get the address of Colab's port forwarding. Run this in a Colab notebook."
+        "EN": "Could not get the address of Colab's port forwarding. Run this in a Colab notebook.",
+        "CN": "无法获取 Colab 端口转发地址。请在 Colab Notebook 中执行。"
       },
       "keep_running": {
         "JP": "このセルはComfyUIを使っている間は実行したままにしてください。ノートブックの無操作による切断を防ぎます。ほかのセルを使うときは■で止め、終わったら6-4で待機を再開してください。",
-        "EN": "Keep this cell running while you use ComfyUI. It keeps the notebook from being disconnected as idle. To use another cell, stop it with ■, then resume waiting with cell 6-4 when you are done."
+        "EN": "Keep this cell running while you use ComfyUI. It keeps the notebook from being disconnected as idle. To use another cell, stop it with ■, then resume waiting with cell 6-4 when you are done.",
+        "CN": "使用 ComfyUI 时请让此单元格保持运行，以降低被 Colab 认定为空闲的概率。如需使用其他单元格，先点击 ■ 中断，结束后运行第 6-4 步恢复等待。"
       }
     },
     "keep": {
       "not_running": {
         "JP": "ComfyUIが起動していません。6-1〜6-3のいずれかで起動してから実行してください。",
-        "EN": "ComfyUI is not running. Start it with one of cells 6-1 to 6-3, then run this cell."
+        "EN": "ComfyUI is not running. Start it with one of cells 6-1 to 6-3, then run this cell.",
+        "CN": "ComfyUI 尚未运行。请先使用 6-1、6-2 或 6-3 启动，再运行此单元格。"
       },
       "status": {
         "JP": "ComfyUIを実行中（起動から {running}）。最後の環境の保存: {saved}。",
-        "EN": "ComfyUI is running (for {running}). Environment last saved: {saved}."
+        "EN": "ComfyUI is running (for {running}). Environment last saved: {saved}.",
+        "CN": "ComfyUI 运行中（已运行 {running}）。环境上次保存时间：{saved}。"
       },
       "saved_minutes": {
         "JP": "{minutes}分前",
-        "EN": "{minutes} min ago"
+        "EN": "{minutes} min ago",
+        "CN": "{minutes} 分钟前"
       },
       "saved_none": {
         "JP": "まだありません（変更があると保存します）",
-        "EN": "not yet (saved when something changes)"
+        "EN": "not yet (saved when something changes)",
+        "CN": "尚未保存（环境发生变化时会保存）"
       },
       "saved_failed": {
         "JP": "失敗しています（7で確認してください）",
-        "EN": "failed (see cell 7)"
+        "EN": "failed (see cell 7)",
+        "CN": "保存失败（请查看第 7 步）"
       },
       "interrupted": {
         "JP": "待機を止めました。ComfyUIは動き続けています。ほかのセルを使い終わったら、6-4を実行して待機を再開してください。",
-        "EN": "Stopped waiting. ComfyUI keeps running. When you are done with the other cells, run cell 6-4 to resume waiting."
+        "EN": "Stopped waiting. ComfyUI keeps running. When you are done with the other cells, run cell 6-4 to resume waiting.",
+        "CN": "已停止等待，ComfyUI 仍在运行。完成其他单元格操作后，请执行第 6-4 步恢复等待。"
       },
       "stopped": {
         "JP": "ComfyUIが停止したためこのセルを終了しました。",
-        "EN": "ComfyUI has stopped so this cell has ended."
+        "EN": "ComfyUI has stopped so this cell has ended.",
+        "CN": "ComfyUI 已停止，此单元格已结束。"
       }
     },
     "stop": {
       "saved": {
         "JP": "Googleドライブへの環境保存が完了しました。",
-        "EN": "The environment has been saved to Google Drive."
+        "EN": "The environment has been saved to Google Drive.",
+        "CN": "环境已保存到 Google Drive。"
       },
       "done": {
         "JP": "停止しました。生成ファイルはランタイム削除前にPCで確認してください。",
-        "EN": "Stopped. Check the generated files on your PC before deleting the runtime."
+        "EN": "Stopped. Check the generated files on your PC before deleting the runtime.",
+        "CN": "已停止。删除运行时之前请确认生成文件已保存到电脑。"
       }
     },
     "update": {
       "running": {
         "JP": "ComfyUIが起動中です。10で停止（FLUSH_AND_UNMOUNTはOFF）してから実行してください。",
-        "EN": "ComfyUI is running. Stop it with cell 10 (FLUSH_AND_UNMOUNT off) first."
+        "EN": "ComfyUI is running. Stop it with cell 10 (FLUSH_AND_UNMOUNT off) first.",
+        "CN": "ComfyUI 正在运行。请先通过第 10 步停止（关闭 FLUSH_AND_UNMOUNT）。"
       },
       "unknown_ref": {
         "JP": "ComfyUIに {ref} というバージョンが見つかりません。",
-        "EN": "ComfyUI has no version named {ref}."
+        "EN": "ComfyUI has no version named {ref}.",
+        "CN": "ComfyUI 中不存在名为 {ref} 的版本。"
       },
       "already": {
         "JP": "ComfyUIは既に {version} です。",
-        "EN": "ComfyUI is already at {version}."
+        "EN": "ComfyUI is already at {version}.",
+        "CN": "ComfyUI 已是 {version} 版本。"
       },
       "starting": {
         "JP": "ComfyUIを {previous} から {ref} へ更新します。",
-        "EN": "Updating ComfyUI from {previous} to {ref}."
+        "EN": "Updating ComfyUI from {previous} to {ref}.",
+        "CN": "正在将 ComfyUI 从 {previous} 更新到 {ref}。"
       },
       "undone": {
         "JP": "更新に失敗したため、元のバージョン（{version}）へ戻しました。Googleドライブの保存内容は変わっていません。",
-        "EN": "The update failed, so ComfyUI was put back to {version}. Nothing on Google Drive has changed."
+        "EN": "The update failed, so ComfyUI was put back to {version}. Nothing on Google Drive has changed.",
+        "CN": "更新失败，已将 ComfyUI 恢复到 {version}。Google Drive 中的内容未改变。"
       },
       "undo_failed": {
         "JP": "更新に失敗し、元のバージョンへも戻せませんでした。11をもう一度実行してください。",
-        "EN": "The update failed and ComfyUI could not be put back. Run cell 11 again."
+        "EN": "The update failed and ComfyUI could not be put back. Run cell 11 again.",
+        "CN": "更新失败，而且无法恢复旧版本。请重新运行第 11 步。"
       },
       "incomplete": {
         "JP": "ComfyUIの更新が途中で止まっています。11をもう一度実行するか、ランタイムを削除してください（Googleドライブには更新前の環境が残っています）。",
-        "EN": "An update of ComfyUI was left unfinished. Run cell 11 again, or delete the runtime (Google Drive still holds the environment from before the update)."
+        "EN": "An update of ComfyUI was left unfinished. Run cell 11 again, or delete the runtime (Google Drive still holds the environment from before the update).",
+        "CN": "上次 ComfyUI 更新未完成。请重新运行第 11 步，或删除运行时（Google Drive 中仍保留更新前的环境）。"
       },
       "resuming": {
         "JP": "途中で止まった更新を元に戻します。",
-        "EN": "Undoing the update that was left unfinished."
+        "EN": "Undoing the update that was left unfinished.",
+        "CN": "正在撤销上次未完成的更新。"
       },
       "done": {
         "JP": "ComfyUIを {previous} から {version} へ更新し、Googleドライブへ保存しました。6-1〜6-3のいずれかを実行して起動してください。",
-        "EN": "Updated ComfyUI from {previous} to {version} and saved it to Drive. Run one of cells 6-1 to 6-3 to start it."
+        "EN": "Updated ComfyUI from {previous} to {version} and saved it to Drive. Run one of cells 6-1 to 6-3 to start it.",
+        "CN": "已将 ComfyUI 从 {previous} 更新到 {version} 并保存到 Google Drive。请执行 6-1、6-2 或 6-3 启动。"
       }
     },
     "pairing": {
       "title": {
         "JP": "ComfyUIへ接続",
-        "EN": "Connect to ComfyUI"
+        "EN": "Connect to ComfyUI",
+        "CN": "连接到 ComfyUI"
       },
       "prompt": {
         "JP": "ノートブックに表示されたペアリングコードを入力してください。",
-        "EN": "Enter the pairing code shown in the notebook."
+        "EN": "Enter the pairing code shown in the notebook.",
+        "CN": "请输入 Notebook 显示的配对码。"
       },
       "button": {
         "JP": "接続",
-        "EN": "Connect"
+        "EN": "Connect",
+        "CN": "连接"
       },
       "wrong": {
         "JP": "コードが違います。あと{remaining}回入力できます。",
-        "EN": "That code is not right. Tries left: {remaining}."
+        "EN": "That code is not right. Tries left: {remaining}.",
+        "CN": "配对码不正确，剩余尝试次数：{remaining}。"
       },
       "closed": {
         "JP": "このコードは使えません。ノートブックの6-2で NEW_PAIRING_CODE をONにして実行し、新しいコードを発行してください。",
-        "EN": "This code cannot be used. Run cell 6-2 of the notebook with NEW_PAIRING_CODE checked to issue a new one."
+        "EN": "This code cannot be used. Run cell 6-2 of the notebook with NEW_PAIRING_CODE checked to issue a new one.",
+        "CN": "此配对码不可使用。请在 Notebook 的第 6-2 步勾选 NEW_PAIRING_CODE 重新生成。"
       },
       "not_running": {
         "JP": "6-2で起動してから実行してください。",
-        "EN": "Start with cell 6-2 first."
+        "EN": "Start with cell 6-2 first.",
+        "CN": "请先通过第 6-2 步启动。"
       }
     },
     "access": {
       "invalid_hostname": {
         "JP": "公開ホスト名が不正です。comfy.example.com の形式で指定してください。",
-        "EN": "Invalid public hostname. Enter it like comfy.example.com."
+        "EN": "Invalid public hostname. Enter it like comfy.example.com.",
+        "CN": "公开主机名无效，请按照 comfy.example.com 的格式填写。"
       },
       "invalid_audience": {
         "JP": "AUDタグが不正です。Colabのシークレット CF_ACCESS_AUD に、AccessアプリケーションのApplication Audience (AUD) Tag（64桁の英数字）を登録してください。",
-        "EN": "Invalid AUD tag. Register the Application Audience (AUD) Tag of the Access application (64 characters) as CF_ACCESS_AUD in Colab Secrets."
+        "EN": "Invalid AUD tag. Register the Application Audience (AUD) Tag of the Access application (64 characters) as CF_ACCESS_AUD in Colab Secrets.",
+        "CN": "AUD 标签无效。请将 Access 应用的 64 字符 Application Audience (AUD) Tag 保存为 Colab 密钥 CF_ACCESS_AUD。"
       },
       "invalid_token": {
         "JP": "トンネルのトークンが不正です。Colabのシークレット CF_TUNNEL_TOKEN に、eyJ で始まるトークンだけを登録してください。",
-        "EN": "Invalid tunnel token. Register only the token, which starts with eyJ, as CF_TUNNEL_TOKEN in Colab Secrets."
+        "EN": "Invalid tunnel token. Register only the token, which starts with eyJ, as CF_TUNNEL_TOKEN in Colab Secrets.",
+        "CN": "隧道令牌无效。请将以 eyJ 开头的原始令牌保存为 Colab 密钥 CF_TUNNEL_TOKEN。"
       },
       "tunnel_exited": {
         "JP": "名前付きトンネルが終了しました。トークンが正しいか、7のtunnel.logを確認してください。",
-        "EN": "The named tunnel exited. Check that the token is right, and tunnel.log in cell 7."
+        "EN": "The named tunnel exited. Check that the token is right, and tunnel.log in cell 7.",
+        "CN": "命名隧道已退出。请检查令牌和第 7 步的 tunnel.log。"
       },
       "unprotected": {
         "JP": "{hostname} でCloudflare Accessのログイン画面への転送を確認できませんでした（応答: {status}）。Accessアプリケーションがこのホスト名を保護しているか、DNSの設定が反映されているかを確認してください。設定の直後は、数分待ってから実行し直してください。起動していません。",
-        "EN": "Could not see {hostname} send visitors to the Cloudflare Access sign-in (answer: {status}). Check that an Access application protects this hostname and that its DNS record is in place. Right after changing the settings, wait a few minutes and run again. Nothing was started."
+        "EN": "Could not see {hostname} send visitors to the Cloudflare Access sign-in (answer: {status}). Check that an Access application protects this hostname and that its DNS record is in place. Right after changing the settings, wait a few minutes and run again. Nothing was started.",
+        "CN": "未检测到 {hostname} 将访客重定向到 Cloudflare Access 登录页面（状态：{status}）。请检查该主机名对应的 Access 应用和 DNS 记录。刚修改配置时请等待几分钟后重试。程序尚未启动。"
       },
       "heading": {
         "JP": "Comfy Desktop > Remote Connection に入力するURL（通常のブラウザーでも開けます）:",
-        "EN": "URL to enter in Comfy Desktop > Remote Connection (a regular browser can open it too):"
+        "EN": "URL to enter in Comfy Desktop > Remote Connection (a regular browser can open it too):",
+        "CN": "在 Comfy Desktop 的 Remote Connection 中输入以下 URL（普通浏览器也可打开）："
       },
       "note": {
         "JP": "開くとCloudflare Accessのログイン画面が出ます。許可したアカウントでログインした端末だけが接続できます。停止するとこのURLは応答しなくなります。",
-        "EN": "Opening it shows the Cloudflare Access sign-in. Only a device signed in with an account you allowed can connect. The URL stops answering when you stop."
+        "EN": "Opening it shows the Cloudflare Access sign-in. Only a device signed in with an account you allowed can connect. The URL stops answering when you stop.",
+        "CN": "打开 URL 后将显示 Cloudflare Access 登录界面，只有获授权账号登录的设备可以连接。停止后此 URL 将无法访问。"
       },
       "wrong_target": {
         "JP": "トンネルの公開ホスト名の転送先が http://127.0.0.1:8189 だけになっていません（現在の設定: {services}）。Cloudflareのトンネルの設定で、サービスの種類をHTTP、URLを 127.0.0.1:8189 にしてから実行し直してください。接続を中止しました。",
-        "EN": "The public hostnames of the tunnel do not all lead to http://127.0.0.1:8189 (current settings: {services}). In the tunnel settings in Cloudflare, set the service type to HTTP and the URL to 127.0.0.1:8189, then run again. Not connected."
+        "EN": "The public hostnames of the tunnel do not all lead to http://127.0.0.1:8189 (current settings: {services}). In the tunnel settings in Cloudflare, set the service type to HTTP and the URL to 127.0.0.1:8189, then run again. Not connected.",
+        "CN": "隧道的公开主机名并非全部指向 http://127.0.0.1:8189（当前设置：{services}）。请在 Cloudflare 隧道配置中将服务类型设为 HTTP、地址设为 127.0.0.1:8189，再重新运行。尚未连接。"
       },
       "target_unknown": {
         "JP": "注意: トンネルの転送先の設定を読み取れませんでした。Cloudflareのトンネルの設定で、公開ホスト名の転送先が http://127.0.0.1:8189 になっていることを確認してください。",
-        "EN": "Note: could not read where the tunnel leads. Check in the tunnel settings in Cloudflare that the public hostname points to http://127.0.0.1:8189."
+        "EN": "Note: could not read where the tunnel leads. Check in the tunnel settings in Cloudflare that the public hostname points to http://127.0.0.1:8189.",
+        "CN": "提示：无法读取隧道的转发目标。请在 Cloudflare 的隧道配置中确认公开主机名指向 http://127.0.0.1:8189。"
       }
     },
     "menu": {
       "stop": {
         "JP": "停止",
-        "EN": "Stop"
+        "EN": "Stop",
+        "CN": "停止"
       },
       "title": {
         "JP": "ComfyUIを停止",
-        "EN": "Stop ComfyUI"
+        "EN": "Stop ComfyUI",
+        "CN": "停止 ComfyUI"
       },
       "explain": {
         "JP": "環境をGoogleドライブへ保存してから接続を解除します。生成物はGoogleドライブへ保存されません。ランタイムを削除するとPCへ取得していない出力は失われます。",
-        "EN": "The environment is saved to Google Drive, then the connection is closed. Generated files are not saved to Google Drive: deleting the runtime loses any output you have not downloaded to your PC."
+        "EN": "The environment is saved to Google Drive, then the connection is closed. Generated files are not saved to Google Drive: deleting the runtime loses any output you have not downloaded to your PC.",
+        "CN": "将环境保存到 Google Drive 后断开连接。生成文件不会保存到 Google Drive；删除运行时会丢失尚未下载到电脑的输出。"
       },
       "delete": {
         "JP": "接続を解除してランタイムを削除",
-        "EN": "Disconnect and delete the runtime"
+        "EN": "Disconnect and delete the runtime",
+        "CN": "断开连接并删除运行时"
       },
       "disconnect": {
         "JP": "接続を解除",
-        "EN": "Disconnect"
+        "EN": "Disconnect",
+        "CN": "断开连接"
       },
       "cancel": {
         "JP": "キャンセル",
-        "EN": "Cancel"
+        "EN": "Cancel",
+        "CN": "取消"
       },
       "working": {
         "JP": "保存して停止しています。完了するとこのページは切断されます。",
-        "EN": "Saving and stopping. This page is disconnected when it is done."
+        "EN": "Saving and stopping. This page is disconnected when it is done.",
+        "CN": "正在保存并停止。完成后此页面会断开连接。"
       },
       "stopped": {
         "JP": "接続を解除しました。再開するときはノートブックの6-1〜6-3のいずれかを実行してください。",
-        "EN": "Disconnected. To start again, run one of cells 6-1 to 6-3 in the notebook."
+        "EN": "Disconnected. To start again, run one of cells 6-1 to 6-3 in the notebook.",
+        "CN": "已断开连接。若要重新启动，请运行 Notebook 中的 6-1、6-2 或 6-3。"
       },
       "deleted": {
         "JP": "接続を解除しました。ランタイムの削除には少し時間がかかります。Colabの画面でランタイムが切断されたことを確認してください。",
-        "EN": "Disconnected. Deleting the runtime takes a little longer. Check in Colab that the runtime has been disconnected."
+        "EN": "Disconnected. Deleting the runtime takes a little longer. Check in Colab that the runtime has been disconnected.",
+        "CN": "已断开连接，删除运行时还需要一些时间。请在 Colab 确认运行时已断开。"
       },
       "failed": {
         "JP": "停止できませんでした。ノートブックの10で停止してください。",
-        "EN": "Could not stop. Stop with cell 10 of the notebook."
+        "EN": "Could not stop. Stop with cell 10 of the notebook.",
+        "CN": "无法停止。请使用 Notebook 的第 10 步停止。"
       },
       "slow": {
         "JP": "時間がかかっています。進まない場合は、ノートブックの10で停止するかColabの画面からランタイムを削除してください。",
-        "EN": "This is taking a while. If nothing happens, stop with cell 10 of the notebook or delete the runtime in Colab."
+        "EN": "This is taking a while. If nothing happens, stop with cell 10 of the notebook or delete the runtime in Colab.",
+        "CN": "操作耗时较长。如果一直没有进展，请使用 Notebook 的第 10 步停止，或在 Colab 中删除运行时。"
       },
       "repository": {
         "JP": "GitHubレポジトリを開く",
-        "EN": "Open GitHub Repository"
+        "EN": "Open GitHub Repository",
+        "CN": "打开 GitHub 仓库"
       }
     }
   }
